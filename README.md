@@ -15,7 +15,7 @@ It’s time for you to implement what you’ve learned during the workshop. In t
 
 ### Setting up the repo locally  🔧
 ```
-yarn dev
+yarn de
 ```
 ### Testing the code locally  🚧
 ```

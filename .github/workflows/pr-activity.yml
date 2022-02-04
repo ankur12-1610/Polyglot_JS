@@ -1,0 +1,20 @@
+name: 'Pull Request Action 🚀'
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ankur12-1610/pull-request-action@master
+        with:
+          GIPHY_TOKEN: ${{ secrets.GIPHY_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMMENT_TEXT: 'thanks for submitting a pull request! We will try to review it as soon as we can :)'
+          PR_REACTION: 'rocket' 
+          GIPHY_TOPIC: 'Thanks a lot' 
+          TAG_AUTHOR: true 
+          ASSIGN_TO_AUTHOR: true 

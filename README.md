@@ -7,9 +7,9 @@
 Hey hackers!
 It’s time for you to implement what you’ve learned during the workshop. In this assignment you’ll use the basics of variable declaration, function declaration and implementation and DOM manipulation!
 
-- Just fork this repository: 
-- Clone it :
-- Create a branch and switch to it:
+- Just fork this repository
+- Clone it
+- Create a branch and switch to it
 
 And finally…CODE!
 

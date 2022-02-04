@@ -46,7 +46,7 @@ function cardClicked(cardEl) {
 
   document.querySelector(".game-board").classList.add("card-selected");
 
-  // Yes JS is cool and this would allow you to wait 500ms beforing revealing the hacker power
+  // Yes JS is cool and this would allow you to wait 500ms before revealing the hacker power
   setTimeout(function(){
     revealHackerPower();
   },500)

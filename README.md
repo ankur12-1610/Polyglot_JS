@@ -13,13 +13,13 @@ It’s time for you to implement what you’ve learned during the workshop. In t
 
 And finally…CODE!
 
-###Setting up the repo locally:
+### Setting up the repo locally:
 - ```yarn dev```
-###Testing the code locally:
+### Testing the code locally:
 - ```yarn test```
 or
 - ```yarn test:ui``` (for the UI tests)
-###Building the code:
+### Building the code:
 - ```yarn build```
 > Essential if you want to deploy your code to GitHub Pages.
 
@@ -28,8 +28,8 @@ We need you to deploy your repo to GitHub Pages. Follow this [blog post](https:/
 We’ve already set up a skeleton using HTML and CSS for you. Just follow the instructions given as comments and bring the skeleton to life!
 
 For any queries, contact us:
-[Ankur Patil](https://github.com/ankur12-1610) : +91 93739 42506
-[Divyansh Srivastava](https://github.com/Divyansh013): +91 88748 41678
-[Shubhangi Choudhary](https://github.com/shubhangi013): +91 7895870753
+- [Ankur Patil](https://github.com/ankur12-1610) : +91 93739 42506
+- [Divyansh Srivastava](https://github.com/Divyansh013): +91 88748 41678
+- [Shubhangi Choudhary](https://github.com/shubhangi013): +91 7895870753
 
 PS: You can make changes to the HTML and CSS to enhance your application but it will not add up to your overall grades for the assignment.

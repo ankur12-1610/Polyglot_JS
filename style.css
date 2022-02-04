@@ -52,13 +52,13 @@ h1 strong {
 .hacker-area {
   background-position: bottom;
   align-items: flex-end;
-  background-color: black;
+  background-color: #e65b74;
 }
 
 .player-area {
   background-position: top;
   align-items: top;
-  background-color: blue;
+  background-color: #2563eb;
 }
 
 .player-area .card {

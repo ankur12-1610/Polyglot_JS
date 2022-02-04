@@ -9,9 +9,9 @@ It’s time for you to implement what you’ve learned during the workshop. In t
 
 - Just fork this repository
 - Clone it
-- Create a branch and switch to it
-
-And finally…CODE!
+- Create a branch and switch to it And finally…CODE!
+- Push your changes to the forked repo
+- Submit a Pull Request
 
 ### Setting up the repo locally  🔧
 ```

@@ -76,7 +76,7 @@ function compareCards(){
 
 }
 
-//Use conditional statements and complete the fucnbtion that shows the winner message
+//Use conditional statements and complete the function that shows the winner message
 function gameOver(winner) {
   
 }

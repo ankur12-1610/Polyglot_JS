@@ -13,15 +13,26 @@ It’s time for you to implement what you’ve learned during the workshop. In t
 
 And finally…CODE!
 
-### Setting up the repo locally:
-- ```yarn dev```
-### Testing the code locally:
-- ```yarn test```
+### Setting up the repo locally  🔧
+```
+yarn dev
+```
+### Testing the code locally  🚧
+```
+yarn test
+```
 or
-- ```yarn test:ui``` (for the UI tests)
-### Building the code:
-- ```yarn build```
+> (for the UI tests)
+```
+yarn test:ui
+```
+### Building the code  🚀
+```
+yarn build
+```
 > Essential if you want to deploy your code to GitHub Pages.
+
+
 
 We need you to deploy your repo to GitHub Pages. Follow this [blog post](https://www.codecademy.com/article/f1-u3-github-pages) for the same.
 
@@ -33,3 +44,8 @@ For any queries, contact us:
 - [Shubhangi Choudhary](https://github.com/shubhangi013): +91 7895870753
 
 PS: You can make changes to the HTML and CSS to enhance your application but it will not add up to your overall grades for the assignment.
+
+---
+
+### Example of Deployed site
+https://ankur12-1610.github.io/Polyglot_JS/

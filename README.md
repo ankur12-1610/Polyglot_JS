@@ -32,7 +32,19 @@ yarn build
 ```
 > Essential if you want to deploy your code to GitHub Pages.
 
+---
 
+### Checkpoints 🏁
+- **Checkpoint 1**: Compare the cards of hacker and player.
+> 20pts
+- **Checkpoint 2**: Keep a track of the individual scores of the hacker and player.
+> 20pts
+- **Checkpoint 3**: Deploy the code to GitHub Pages.
+> 10pts
+- **Extras:** You can improve UI of the game ;)
+> No points will be assigned to this checkpoint it is just for fun!
+
+---
 
 We need you to deploy your repo to GitHub Pages. Follow this [blog post](https://www.codecademy.com/article/f1-u3-github-pages) for the same.
 
@@ -49,3 +61,13 @@ PS: You can make changes to the HTML and CSS to enhance your application but it 
 
 ### Example of Deployed site
 https://ankur12-1610.github.io/Polyglot_JS/
+
+---
+
+### How should it work?
+Here is the live example of it
+
+https://user-images.githubusercontent.com/76884959/152643052-83bd5bfa-95bb-4019-b0b7-ca6ea5ed9954.mp4
+
+
+

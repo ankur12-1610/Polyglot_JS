@@ -22,7 +22,7 @@ yarn dev
 yarn test
 ```
 or
-> (for the UI tests)
+> (for the UI tests
 ```
 yarn test:ui
 ```

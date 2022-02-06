@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ankur12-1610/pull-request-action@master
+      - uses: ankur12-1610/pull-request-action@polyglot
         with:
           GIPHY_TOKEN: ${{ secrets.GIPHY_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

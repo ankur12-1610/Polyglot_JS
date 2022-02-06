@@ -24,13 +24,3 @@ jobs:
         if: github.event_name == 'pull_request' && github.event.action == 'opened'
         with:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
-  
-  addPRgif:
-    name: PR Status Giphy
-    runs-on: ubuntu-latest
-    steps:
-    - name: PR Status Giphy
-      uses: jzweifel/pr-status-giphy-action@master
-      env:
-        GIPHY_API_KEY: ${{ secrets.GIPHY_TOKEN }}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

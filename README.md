@@ -15,7 +15,7 @@ It’s time for you to implement what you’ve learned during the workshop. In t
 - Push your changes to the forked repo
 - Submit a Pull Request
 
-**Follow these steps to get started**
+**Follow these steps to get started*
 
 ### Installing dependencies
 yarn

@@ -7,16 +7,25 @@
 Hey hackers!
 It’s time for you to implement what you’ve learned during the workshop. In this assignment you’ll use the basics of variable declaration, function declaration and implementation and DOM manipulation!
 
+**You have to make all changes in main.js file, all instructions are given there**
+
 - Just fork this repository
 - Clone it
 - Create a branch and switch to it And finally…CODE!
 - Push your changes to the forked repo
 - Submit a Pull Request
 
+**Follow these steps to get started**
+
+### Installing dependencies
+yarn
+
 ### Setting up the repo locally  🔧
 ```
 yarn dev
 ```
+After running these two commands your app will start running on http://localhost:3000/
+
 ### Testing the code locally  🚧
 ```
 yarn test

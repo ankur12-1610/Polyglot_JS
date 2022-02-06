@@ -24,3 +24,17 @@ jobs:
         if: github.event_name == 'pull_request' && github.event.action == 'opened'
         with:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
+          
+  addPRreaction:
+    runs-on: ubunut-latest
+    steps:
+      - uses: actions/github-script@v5
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.rest.reactions.createForIssue({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              content: '🚀'
+            })

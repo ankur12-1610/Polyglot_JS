@@ -32,5 +32,5 @@ jobs:
     - name: PR Status Giphy
       uses: jzweifel/pr-status-giphy-action@master
       env:
-        GIPHY_API_KEY: ${{ secrets.GIPHY_API_KEY }}
+        GIPHY_API_KEY: ${{ secrets.GIPHY_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,7 +1,6 @@
 <div align="center">
   <img alt="HG_LOGO" src="assets/js.png" height="64" />
 </div>
-
 # Polyglot JS: Hacker Card
 
 Hey hackers!

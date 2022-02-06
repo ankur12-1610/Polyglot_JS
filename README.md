@@ -17,7 +17,7 @@ It’s time for you to implement what you’ve learned during the workshop. In t
 
 **Follow these steps to get started**
 
-### Installing dependencies
+### Installing dependencie
 yarn
 
 ### Setting up the repo locally  🔧

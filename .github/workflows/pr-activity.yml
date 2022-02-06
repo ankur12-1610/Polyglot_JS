@@ -26,23 +26,11 @@ jobs:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
   
   addPRgif:
+    name: PR Status Giphy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: koushikmohan1996/action-pr-gifs@master
-        with:
-          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-          
-  addPRreaction:
-    runs-on: ubunutu-latest
-    steps:
-      - uses: actions/github-script@v5
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            github.rest.reactions.createForIssue({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              content: '🚀'
-            })
+    - name: PR Status Giphy
+      uses: jzweifel/pr-status-giphy-action@master
+      env:
+        GIPHY_API_KEY: ${{ secrets.GIPHY_API_KEY }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

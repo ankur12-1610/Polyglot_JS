@@ -5,7 +5,7 @@
 # Polyglot JS: Hacker Card
 
 Hey hackers!
-It’s time for you to implement what you’ve learned during the workshop. In this assignment you’ll use the basics of variable declaration, function declaration and implementation and DOM manipulation!
+It’s time for you to implement what you’ve learned during the workshop. In this assignment you’ll use the basics of variable declaration, function declaration nd implementation and DOM manipulation!
 
 **You have to make all changes in main.js file, all instructions are given there**
 

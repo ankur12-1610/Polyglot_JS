@@ -24,16 +24,25 @@ var playerWinnerMessage = "Write the message here";
 var playerStartLife = parseInt(playerLife);
 var hackerStartLife = parseInt(hackerLife);
 
+// Get the hacker and player cards DOM elements
+const hackerCard = document.querySelector(".hacker-card");
+const playerCardsArr = Array.from(document.querySelectorAll(".player-card"));
+console.log(hackerCard);
+let cardSelected = false;
+
+const lifeCounters = Array.from(document.querySelectorAll(".life-total"));
+lifeCounters[0].innerText = hackerStartLife;
+lifeCounters[1].innerText = playerStartLife;
+
 // we will declare the functions for you and you will complete those 
 updateScores();
 
 // you learnt DOM manipulation right? here's an example of the same. Go ahead and use manipulate the DOM!
 document.querySelector(".game-board").classList.add("before-game");
 
-var allCardElements = document.querySelectorAll(".card");
+var allCardElements = Array.from(document.querySelectorAll(".card"));
 
 // Adds click handler to all player card elements so that your cards are actionable
-
 
 // An example of a function that controls what would happen when a card is clicked
 
@@ -45,35 +54,56 @@ function cardClicked(cardEl) {
   cardEl.classList.add("played-card");
 
   document.querySelector(".game-board").classList.add("card-selected");
-
+  console.log("hey a card was just clicked")
   // Yes JS is cool and this would allow you to wait 500ms before revealing the hacker power
-  setTimeout(function(){
+  setTimeout(function() {
     revealHackerPower();
   },500)
 
-  setTimeout(function(){
-    revealPlayerPower();
+  setTimeout(function() {
+    revealPlayerPower(cardEl);
   },800)
   
-  setTimeout(function(){
-    compareCards();
+  setTimeout(function() {
+    compareCards(cardEl);
   }, 1400);
 }
 
 // Now write a function that shows the power level on the player card
-function revealPlayerPower(){
-  
+function revealPlayerPower(cardEl) {
+  cardEl.classList.toggle("reveal-power");
 }
 
 // Write a function that shows the power level on the hacker card
 function revealHackerPower(){
-
+  hackerCard.classList.toggle("reveal-power");
 }
 // Write a function to compare the cards. Here is where all your skills would come in handy! 
 // P.S: We've added the 'disabled' attribute in the CSS file for the button and you should use it in case you want a certain element to just go away or 'vanish' at a certain  time. For eg: You'd definitely want the 'Next' button to go away after a player chooses a card right?
 
-function compareCards(){
+function compareCards(cardSelectedByUser) {
 
+  // Get the power of the card selected by user
+  const playerPower = parseInt(cardSelectedByUser.lastElementChild.innerText);
+  const hackerPower = parseInt(hackerCard.lastElementChild.innerText);
+  console.log(playerPower);
+
+  if (playerPower > hackerPower) {
+    --hackerLife;
+    lifeCounters[0].innerText = hackerLife;
+    hackerCard.classList.toggle("worse-card");
+    cardSelectedByUser.classList.toggle("better-card");
+  } else {
+    --playerLife;
+    lifeCounters[1].innerText = playerLife;
+    hackerCard.classList.toggle("better-card");
+    cardSelectedByUser.classList.toggle("worse-card");
+  }
+
+  lifeCounters[0].innerText = hackerLife;
+  lifeCounters[1].innerText = playerLife;
+
+  updateScores();
 }
 
 //Use conditional statements and complete the function that shows the winner message
@@ -84,18 +114,26 @@ function gameOver(winner) {
 
 // Write a function that starts the game
 function startGame() {
+  console.log(scenarios);
 
+  // Grab the start button and toggle it off
+  const startBtn = document.querySelector(".start-game");
+  console.log(startBtn);
+  startBtn.setAttribute("disabled", "true");
+  
+  // Play the first turn of the game
+  playTurn(0);
 }
 
 
 // Now write a function that starts the game over from scratch
-function restartGame(){
+function restartGame() {
 
 }
 
 // We've also used a cool life bar that displays the life left. Write a function that updates the displayed life bar and life totals
 // use innerHTML and a lot of other cool things to do this. 
-function updateScores(){
+function updateScores() {
 
   // Here these update life totals for each player
   document.querySelector(".player-stats .life-total").innerHTML = playerLife;
@@ -108,17 +146,39 @@ function updateScores(){
   document.querySelector(".player-stats .life-left").style.height =  playerPercent + "%";
 
   // Now you write the code to update the hacker lifebar
+  document.querySelector(".hacker-stats .life-total").innerHTML = hackerLife;
 
+  let hackerPercent = hackerLife / hackerStartLife * 100;
+  if (hackerPercent < 0) {
+    hackerPercent = 0;
+  }
+  document.querySelector(".hacker-stats .life-left").style.height =  hackerPercent + "%";
 }
 
 
 
 // Write a function that Plays one turn of the game
-function playTurn() {
+function playTurn(turnNumber = 0) {
 
-}
+  // show the hacker card and player cards and sync all the info with the DOM
+  hackerCard.classList.toggle("showCard");
+  playerCardsArr.forEach((el) => { 
+    el.classList.toggle("showCard");
 
-// Finally write the function that reveals the cards. Use 
-function revealCards(){
+    el.addEventListener("click", () => {
+      cardClicked(el);
+    });
+  });
 
+  hackerCard.firstElementChild.innerText = scenarios[turnNumber].hackerCard.description;
+  console.log(hackerCard.lastElementChild);
+  hackerCard.lastElementChild.innerText = scenarios[turnNumber].hackerCard.power;
+
+  playerCardsArr[0].firstElementChild.innerText = scenarios[turnNumber].playerCards[0].description;
+  playerCardsArr[1].firstElementChild.innerText = scenarios[turnNumber].playerCards[1].description;
+  playerCardsArr[2].firstElementChild.innerText = scenarios[turnNumber].playerCards[2].description;
+
+  playerCardsArr[0].lastElementChild.innerText = scenarios[turnNumber].playerCards[0].power;
+  playerCardsArr[1].lastElementChild.innerText = scenarios[turnNumber].playerCards[1].power;
+  playerCardsArr[2].lastElementChild.innerText = scenarios[turnNumber].playerCards[2].power;
 }

@@ -28,7 +28,11 @@ var hackerStartLife = parseInt(hackerLife);
 const hackerCard = document.querySelector(".hacker-card");
 const playerCardsArr = Array.from(document.querySelectorAll(".player-card"));
 console.log(hackerCard);
+
+const nextTurnBtn = document.querySelector(".next-turn");
+
 let cardSelected = false;
+let turnNumberRaw = 0;
 
 const lifeCounters = Array.from(document.querySelectorAll(".life-total"));
 lifeCounters[0].innerText = hackerStartLife;
@@ -43,10 +47,21 @@ document.querySelector(".game-board").classList.add("before-game");
 var allCardElements = Array.from(document.querySelectorAll(".card"));
 
 // Adds click handler to all player card elements so that your cards are actionable
+playerCardsArr.forEach((el) => { 
+  // el.classList.toggle("showCard");
+
+  console.log("I'm inside the playerCards eventHandler Adding forEach");
+  el.addEventListener("click", () => {
+    console.log("You just clicked a card!");
+    cardClicked(el);
+  });
+});
 
 // An example of a function that controls what would happen when a card is clicked
 
 function cardClicked(cardEl) {
+
+  ++turnNumberRaw;
 
   if(cardSelected) { return; }
   cardSelected = true;
@@ -83,6 +98,8 @@ function revealHackerPower(){
 
 function compareCards(cardSelectedByUser) {
 
+  let winner; // 0 for hacker, 1 for player
+
   // Get the power of the card selected by user
   const playerPower = parseInt(cardSelectedByUser.lastElementChild.innerText);
   const hackerPower = parseInt(hackerCard.lastElementChild.innerText);
@@ -93,17 +110,51 @@ function compareCards(cardSelectedByUser) {
     lifeCounters[0].innerText = hackerLife;
     hackerCard.classList.toggle("worse-card");
     cardSelectedByUser.classList.toggle("better-card");
+    winner = 1;
   } else {
     --playerLife;
     lifeCounters[1].innerText = playerLife;
     hackerCard.classList.toggle("better-card");
     cardSelectedByUser.classList.toggle("worse-card");
+    winner = 0;
   }
 
   lifeCounters[0].innerText = hackerLife;
   lifeCounters[1].innerText = playerLife;
 
   updateScores();
+  nextTurn(cardSelectedByUser, winner);
+}
+
+// Function to bootstrap the next turn process
+function nextTurn(cardSelectedByUser, winner) {
+  console.log("Inside the nextTurn function");
+  console.log(nextTurnBtn);
+
+  setTimeout(() => { nextTurnBtn.style.display = "block"; }, 2000);
+
+  setTimeout(() => {  
+    hackerCard.classList.toggle("showCard");
+    playerCardsArr.forEach((el) => { 
+      el.classList.toggle("showCard");
+    });
+
+    if (winner === 0) {      // hacker won
+      cardSelectedByUser.classList.toggle("worse-card");
+      hackerCard.classList.toggle("better-card");
+    } else {
+      cardSelectedByUser.classList.toggle("better-card");
+      hackerCard.classList.toggle("worse-card");
+    }
+
+    cardSelectedByUser.classList.toggle("played-card");
+    cardSelectedByUser.classList.toggle("reveal-power");
+    hackerCard.classList.toggle("reveal-power");
+
+    // turning off the global cardSelected, and in the DOM
+    cardSelected = false;
+    document.querySelector(".game-board").classList.toggle("card-selected");
+}, 1500);
 }
 
 //Use conditional statements and complete the function that shows the winner message
@@ -122,7 +173,7 @@ function startGame() {
   startBtn.setAttribute("disabled", "true");
   
   // Play the first turn of the game
-  playTurn(0);
+  playTurn();
 }
 
 
@@ -158,21 +209,25 @@ function updateScores() {
 
 
 // Write a function that Plays one turn of the game
-function playTurn(turnNumber = 0) {
+function playTurn() {
 
+  let turnNumber = turnNumberRaw % 2;
+
+  nextTurnBtn.style.display = "none";
   // show the hacker card and player cards and sync all the info with the DOM
+  hackerCard.firstElementChild.innerText = scenarios[turnNumber].hackerCard.description;
+  console.log(hackerCard.lastElementChild);
+  hackerCard.lastElementChild.innerText = scenarios[turnNumber].hackerCard.power;
+
   hackerCard.classList.toggle("showCard");
   playerCardsArr.forEach((el) => { 
     el.classList.toggle("showCard");
 
-    el.addEventListener("click", () => {
+    console.log("I'm inside the playerCards forEach");
+    /* el.addEventListener("click", () => {
       cardClicked(el);
-    });
+    }); */
   });
-
-  hackerCard.firstElementChild.innerText = scenarios[turnNumber].hackerCard.description;
-  console.log(hackerCard.lastElementChild);
-  hackerCard.lastElementChild.innerText = scenarios[turnNumber].hackerCard.power;
 
   playerCardsArr[0].firstElementChild.innerText = scenarios[turnNumber].playerCards[0].description;
   playerCardsArr[1].firstElementChild.innerText = scenarios[turnNumber].playerCards[1].description;

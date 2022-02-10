@@ -48,4 +48,64 @@ var scenarios = [
       }
     ]
   },
+  {
+    hackerCard : {
+      description : "I sent you an email where I asked to enter your email and password in a site",
+      power : 3,
+    },
+    playerCards : [
+      {
+        description : "I never enter my email and password in any unknown site",
+        power : 5,
+      },
+      {
+        description : "I entered the details but then changed my password",
+        power : 4,
+      },
+      {
+        description : "I entered my email and password.",
+        power : 1,
+      }
+    ]
+  },
+  {
+    hackerCard : {
+      description : "I sent you some file onlie with some attachment you need to download",
+      power : 3,
+    },
+    playerCards : [
+      {
+        description : "I scan it before downloading it",
+        power : 5,
+      },
+      {
+        description : "I scan it after downloading it ",
+        power : 4,
+      },
+      {
+        description : "I download it and do not scan it",
+        power : 1,
+      }
+    ]
+  },
+  {
+    hackerCard : {
+      description : "I gave you my USB drive",
+      power : 3,
+    },
+    playerCards : [
+      {
+        description : "I scanned that USB drive before using it",
+        power : 5,
+      },
+      {
+        description : "I did not use your USB as I did not have anti virus",
+        power : 4,
+      },
+      {
+        description : "I used your USB without scanning",
+        power : 1,
+      }
+    ]
+  },
 ];

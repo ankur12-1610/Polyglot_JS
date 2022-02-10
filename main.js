@@ -35,7 +35,13 @@ updateName();
 updateScores();
 function updateName(){
   playerName = prompt("Please Enter Your Name");
+  if (playerName == ""){
+    alert("Please Enter your Name");
+    updateName();
+  }
+  else{
   document.getElementById("player").innerHTML = playerName;
+}
 }
 // you learnt DOM manipulation right? here's an example of the same. Go ahead and use manipulate the DOM!
 document.querySelector(".game-board").classList.add("before-game");
@@ -148,7 +154,7 @@ function gameOver(winner) {
     document.querySelector(".winner-section").classList.add("hacker-color");
     document.querySelector("button.next-turn").setAttribute("disabled");
   } else if(winner == "Player") {
-    document.querySelector(".winner-message").innerHTML = playerWinnerMessage;
+    document.querySelector(".winner-message").innerHTML = playerWinnerMessage+  "Congrats:"+ playerName;
     document.querySelector(".winner-section").classList.add("player-color");
     document.querySelector("button.next-turn").setAttribute("disabled");
   }else{

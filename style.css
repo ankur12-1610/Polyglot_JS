@@ -5,11 +5,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  font-size: 25px;
 }
 
 body{
   background-repeat: repeat;
-  color: white;
+  color: rgb(231, 222, 222);
 
 }
 
@@ -23,16 +24,16 @@ body{
 .hacker-area h1 {
   padding: 12px 10px 0 10px;
   margin: 0;
-  font-size: 16px;
+  font-size: 25px;
   font-weight: 400;
-  color: rgba(255,255,255,.6);
+  color: rgba(224, 16, 16, 0.6);
   font-style: italic;
   position: absolute;
   top: 0;
 }
 
 h1 strong {
-  color: white;
+  color: rgb(243, 31, 31);
   font-style: normal;
 }
 
@@ -52,13 +53,13 @@ h1 strong {
 .hacker-area {
   background-position: bottom;
   align-items: flex-end;
-  background-color: #e65b74;
+  background-color: #0621b8;
 }
 
 .player-area {
   background-position: top;
   align-items: top;
-  background-color: #2563eb;
+  background-color: #019601;
 }
 
 .player-area .card {

@@ -122,9 +122,9 @@ function compareCards(){
 
   updateScores();
 
-  if(playerLife <= 0) {
+  if(0 >= playerLife) {
     gameOver("Hacker");
-  } else if (hackerLife <= 0){
+  } else if (0 >= hackerLife){
     gameOver("Player")
   }else if(play >=3){
     gameOver("No-Winner");
@@ -231,13 +231,13 @@ function shuffleArray(s) {
 
 // Plays one turn of the game
 function playTurn() {
-  play =play+1;
+  play = play + 1;
   roundFinished = true;
   cardSelected = false;
 
   document.querySelector(".game-board").classList.remove("card-selected");
 
-  // Remove "ouch" class from player and hacker thumbnails
+  // Remove "ouch" from player and hacker thumbnails
   document.querySelector(".hacker-stats .thumbnail").classList.remove("ouch");
   document.querySelector(".player-stats .thumbnail").classList.remove("ouch");
 
@@ -294,7 +294,7 @@ function revealCards(){
       j++;
     }
 
-    // Reveal each card one by one with a delay of 100ms
+    // Revealing each card one by one with a delay of 100ms
     setTimeout(function(card, j){
       return function() {
         card.classList.remove("prepared");
@@ -304,7 +304,7 @@ function revealCards(){
     }(card,i), parseInt(i+1) * 200);
   }
 
-  // Display the hacker card
+  // Displaying the hacker card
   hackerCardEl.querySelector(".text").innerHTML = hackerCard.description;
   hackerCardEl.querySelector(".power").innerHTML = hackerCard.power;
 }

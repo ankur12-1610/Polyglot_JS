@@ -8,9 +8,28 @@
 
 var scenarios = [
   { // add the text you'd want should appear on the hacker's card
+    hackerCard :{
+      description : "I have hacked your MS-Teams account and now you won't be able to submit your assingments.",
+      power : 2,
+    },
+    playerCards : [{
+      description : "I use Google-Classrooms to submit my assignments.",
+      power : 4,
+    },
+    {
+       description : "My Professor does not assign any assignments.",
+       power : 1,
+    },
+    {
+      description : "Our Offline classes are going to start,so we don't need MS-Teams",
+      power : 5,
+    }
+    ]
+  },
+    {
     hackerCard : {
       description : "I set up a fake Wi-Fi station to steal people’s email and track them online.",
-      power : 4,
+      power : 3,
     },
     // add 3 card descriptions you'd want should appear on the player's card. Keeping in mind that at least ONE of them should be an apt counter!
     playerCards : [
@@ -31,7 +50,7 @@ var scenarios = [
   {
     hackerCard : {
       description : "I sent a fake email from your bank asking for your account details.",
-      power : 3,
+      power : 2,
     },
     playerCards : [
       {

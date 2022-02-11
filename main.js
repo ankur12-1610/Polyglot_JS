@@ -14,8 +14,8 @@ var playerLife = 5;
 var hackerLife = 5;
 
 // Message to be displayed when the game is over
-var hackerWinnerMessage = "Write the message here";
-var playerWinnerMessage = "Write the message here";
+var hackerWinnerMessage = "YOU GOT HACKED COMRADE! 👁️ 👄 👁️";
+var playerWinnerMessage = "The Hacker has yee'd his last haw 🤺";
 
           // ---------------Game code starts here ---------------//
 
@@ -164,6 +164,15 @@ function isGameOver(winner) {
     const winnerSectionDiv = document.querySelector(".winner-section");
     console.log(winnerSectionDiv);
     winnerSectionDiv.style.display = "block";
+
+    nextTurnBtn.style.opacity = 0;
+
+    const winnerMsgDiv = document.querySelector(".winner-message");
+    if (playerLife <= 0) {
+      winnerMsgDiv.innerText = hackerWinnerMessage;
+    } else {
+      winnerMsgDiv.innerText = playerWinnerMessage;
+    }
   }
 }
 

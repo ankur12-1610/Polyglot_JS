@@ -245,6 +245,10 @@ function revealCards(){
   {
     allCardElements[i].querySelector(".text").innerHTML = scenarios[j].playerCards[k].description;
     allCardElements[i].querySelector(".power").innerHTML = scenarios[j].playerCards[k].power;
+    document.querySelector(".hacker-area .card").querySelector(".text").innerHTML = scenarios[j].hackerCard.description;
+    document.querySelector(".hacker-area .card").querySelector(".power").innerHTML = scenarios[j].hackerCard.power;
+  
+      
     k++;
     if(k==3)
     {
@@ -253,8 +257,7 @@ function revealCards(){
     }
   }
 
-  document.querySelector(".hacker-area .card").querySelector(".text").innerHTML = scenarios[j].hackerCard.description;
-  document.querySelector(".hacker-area .card").querySelector(".power").innerHTML = scenarios[j].hackerCard.power;
+ 
 
  }
 }

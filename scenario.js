@@ -108,4 +108,44 @@ var scenarios = [
       }
     ]
   },
+  {
+    hackerCard : {
+      description : "I have your Netflix password",
+      power : 3,
+    },
+    playerCards : [
+      {
+        description : "I changed my password and loged out of all devices",
+        power : 5,
+      },
+      {
+        description : "I changed my password but did not log out",
+        power : 4,
+      },
+      {
+        description : "I did not changed my password",
+        power : 1,
+      }
+    ]
+  },
+  {
+    hackerCard : {
+      description : "I am spamming your DM with fake OTPs",
+      power : 3,
+    },
+    playerCards : [
+      {
+        description : "I have spamming protection",
+        power : 5,
+      },
+      {
+        description : "I ignore those as I know I have not given my number to these sites",
+        power : 4,
+      },
+      {
+        description : "I panic!!!!",
+        power : 1,
+      }
+    ]
+  },
 ];

@@ -34,14 +34,14 @@ var playerName;
 updateName();
 updateScores();
 function updateName(){
-  playerName = prompt("Please Enter Your Name");
-  if (playerName == ""){
-    alert("Please Enter your Name");
-    updateName();
-  }
-  else{
-  document.getElementById("player").innerHTML = playerName;
-}
+ playerName = prompt("Enter a Name ")
+ if ((playerName == "")||(playerName === null)){
+   alert("Please Enter a Name or Valid Input");
+   updateName()
+ }
+ else {
+   document.getElementById("player").innerHTML = playerName;
+ }
 }
 // you learnt DOM manipulation right? here's an example of the same. Go ahead and use manipulate the DOM!
 document.querySelector(".game-board").classList.add("before-game");

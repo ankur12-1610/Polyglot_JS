@@ -123,6 +123,7 @@ function compareCards(cardSelectedByUser) {
   lifeCounters[1].innerText = playerLife;
 
   updateScores();
+  isGameOver();
   nextTurn(cardSelectedByUser, winner);
 }
 
@@ -158,8 +159,12 @@ function nextTurn(cardSelectedByUser, winner) {
 }
 
 //Use conditional statements and complete the function that shows the winner message
-function gameOver(winner) {
-  
+function isGameOver(winner) {
+  if ((playerLife <= 0) || (hackerLife <= 0)) {
+    const winnerSectionDiv = document.querySelector(".winner-section");
+    console.log(winnerSectionDiv);
+    winnerSectionDiv.style.display = "block";
+  }
 }
 
 

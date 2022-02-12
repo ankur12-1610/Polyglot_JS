@@ -13,7 +13,7 @@ var playerLife = 5;
 var hackerLife = 5;
 var cardSelected=false;
 var count=0;
-var c=0;
+var c=2;
 // Message to be displayed when the game is over
 var hackerWinnerMessage = "You have been defeated.";
 var playerWinnerMessage = "Smart!Hacker has been arrested.";
@@ -113,16 +113,13 @@ function compareCards()
   // setTimeout(function(){
   //   restartGame();
   // },2000)
-
   // playTurn();
-
-  // console.log("scores has been updated");
+  console.log("scores has been updated");
 }
 
 //Use conditional statements and complete the function that shows the winner message
 function gameOver() 
 {
-  
   console.log("gameover initial");
   if(playerLife <= 0)
   {
@@ -148,7 +145,7 @@ function startGame()
   console.log("start the game");
   document.querySelector(".game-board").classList.remove("before-game");
   document.querySelector(".game-board").classList.add("during-game");
-  firstplayTurn();
+  playTurn();
 }
 
 // We've also used a cool life bar that displays the life left. Write a function that updates the displayed life bar and life totals
@@ -177,33 +174,8 @@ function updateScores()
   document.querySelector(".hacker-stats .life-left").style.height =  hackerPercent + "%";
 }
 
-// Write a function that Plays one turn of the game
-function firstplayTurn() 
-{
-  console.log("time game");
-  console.log("count is 0");
-  cardSelected = false;
-
-  hackerCard.firstElementChild.innerText = scenarios[count].hackerCard.description;
-  hackerCard.lastElementChild.innerText = scenarios[count].hackerCard.power;
-
-  hackerCard.classList.add("showCard");
- 
-  playerCardsArr.forEach((el) => { 
-    el.classList.add("showCard");});
-
-  playerCardsArr[0].firstElementChild.innerText = scenarios[count].playerCards[0].description;
-  playerCardsArr[1].firstElementChild.innerText = scenarios[count].playerCards[1].description;
-  playerCardsArr[2].firstElementChild.innerText = scenarios[count].playerCards[2].description;
-  
-  playerCardsArr[0].lastElementChild.innerText = scenarios[count].playerCards[0].power;
-  playerCardsArr[1].lastElementChild.innerText = scenarios[count].playerCards[1].power;
-  playerCardsArr[2].lastElementChild.innerText = scenarios[count].playerCards[2].power;
-}
-
 function restartGame()
 {
-
   playerLife = 5;
   hackerLife = 5;
   cardSelected=false;
@@ -219,7 +191,6 @@ function playTurn()
   cardSelected = false;
   var playerCard = document.querySelector(".played-card");
   var hackerCard = document.querySelector(".hacker-card");
-
 
   if(c==0)
   {
@@ -239,7 +210,7 @@ function playTurn()
     playerCardsArr.forEach((el) => { 
   el.classList.remove("showCard");}); 
   }
-  else if(c=1)
+  else if(c==1)
   {
     hackerCard.classList.remove("better-card");
     playerCard.classList.remove("worse-card");
@@ -257,27 +228,10 @@ function playTurn()
     playerCardsArr.forEach((el) => { 
   el.classList.remove("showCard");}); 
   }
-  
-  // playerCard.classList.remove("reveal-power");
-  // hackerCard.classList.remove("reveal-power");
-
-  // var playerCard = document.querySelector(".played-card");
-  // playerCard.classList.remove("played-card");
-
-  // document.querySelector(".game-board").classList.remove("card-selected");
-  // hackerCard.classList.remove("showCard");
-
-  //   playerCardsArr.forEach((el) => { 
-  // el.classList.remove("showCard");}); 
-    
-
-    
-    // playerCardsArr.forEach((el) => { 
-    // el.classList.add("showCard");});
 
     setTimeout(function(){
       prrer();
-    },1100)
+    },1000)
     function prrer(){
       playerCardsArr.forEach((el) => { 
         el.classList.add("showCard");});
@@ -286,7 +240,7 @@ function playTurn()
 
     setTimeout(function(){
       her();
-    },600)
+    },400)
     function her(){
       hackerCard.classList.add("showCard");
        console.log("showing 2nd one");

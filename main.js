@@ -24,12 +24,25 @@ var playerWinnerMessage = "Write the message here";
 var playerStartLife = parseInt(playerLife);
 var hackerStartLife = parseInt(hackerLife);
 const startbutton=document.querySelector(".start-game");
+const hackercard=document.querySelector(".card.hacker-card.hacker-color")
+const playercard=document.querySelectorAll(".card.player-card.player-color")
+let i=0;
 
 // we will declare the functions for you and you will complete those 
 updateScores();
 // Finally write the function that reveals the cards. Use 
 function revealCards(){
-
+  if(i==4)
+  i=0;
+  document.querySelectorAll(".card")[0].style.opacity=10;
+  document.querySelectorAll(".card")[1].style.opacity=10;  
+  document.querySelectorAll(".card")[2].style.opacity=10;
+  document.querySelectorAll(".card")[3].style.opacity=10;
+  hackercard.querySelector(".text").textContent=scenarios[i].hackerCard.description;
+  playercard[0].querySelector(".text").textContent=scenarios[i].playerCards[0].description;
+  playercard[1].querySelector(".text").textContent=scenarios[i].playerCards[1].description;
+  playercard[2].querySelector(".text").textContent=scenarios[i].playerCards[2].description;
+  i++;     
 }
 
 // you learnt DOM manipulation right? here's an example of the same. Go ahead and use manipulate the DOM!

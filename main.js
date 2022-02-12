@@ -287,13 +287,30 @@ let playerLife = 5;
 let hackerLife = 5;
 // Message when the game is over
 let hackerWinnerMessage = "Game Over: You got hacked!";
-let playerWinnerMessage = "Congratuations : You defeated the hacker!";
+let playerWinnerMessage = "Congratuations: You defeated the hacker!";
+let NoResultGameMessage = "Oops: No Result of this match";
 // Game code starts here
 let playerStartLife = parseInt(playerLife);
 let hackerStartLife = parseInt(hackerLife);
+
 let roundFinished = false;
 let cardSelected = false;
 
+let initial = 0;
+let playerName;
+
+// we will declare the functions for you and you will complete those
+GiveName();
+
+function GiveName() {
+    playerName = prompt("Enter Name :")
+    if ((playerName == "") || (playerName === null)) {
+        alert("Invalid name entered");
+        GiveName()
+    } else {
+        document.getElementById("player").innerHTML = playerName;
+    }
+}
 updateScores();
 
 document.querySelector(".game-board").classList.add("before-game");
@@ -309,7 +326,7 @@ for (let i = 0; i < allCardElements.length; i++) {
         });
     }
 }
-// When a card is clicked
+// When a card is clicked following function will occur:
 function cardClicked(cardEl) {
     if (cardSelected) { return; }
     cardSelected = true;
@@ -356,15 +373,15 @@ function compareCards() {
     let playerPower = parseInt(playerPowerEl.innerHTML);
     let hackerPower = parseInt(hackerPowerEl.innerHTML);
 
-    let powerDifference = playerPower - hackerPower;
+    let power_Difference = playerPower - hackerPower;
 
-    if (powerDifference < 0) {
+    if (power_Difference < 0) {
         // Player Loses
         playerLife = playerLife + powerDifference;
         hackerCard.classList.add("better-card");
         playerCard.classList.add("worse-card");
         document.querySelector(".player-stats .thumbnail").classList.add("ouch");
-    } else if (powerDifference > 0) {
+    } else if (power_Difference > 0) {
         // Player Wins
         hackerLife = hackerLife - powerDifference;
         playerCard.classList.add("better-card");
@@ -381,6 +398,9 @@ function compareCards() {
         gameOver("Hacker");
     } else if (hackerLife <= 0) {
         gameOver("Player")
+    } else if (initial >= 3) {
+        gameOver("No-Result");
+        initial = 0;
     }
 
     roundFinished = true;
@@ -398,9 +418,15 @@ function gameOver(winner) {
     if (winner == "Hacker") {
         document.querySelector(".winner-message").innerHTML = hackerWinnerMessage;
         document.querySelector(".winner-section").classList.add("hacker-color");
-    } else {
+        document.querySelector("button.next-turn").setAttribute("disabled");
+    } else if (winner == "Player") {
         document.querySelector(".winner-message").innerHTML = playerWinnerMessage;
         document.querySelector(".winner-section").classList.add("player-color");
+        document.querySelector("button.next-turn").setAttribute("disabled");
+    } else {
+        document.querySelector(".winner-message").innerHTML = noResultMessage;
+        document.querySelector(".winner-section").classList.add("hacker-color");
+        document.querySelector("button.next-turn").setAttribute("disabled");
     }
 }
 
@@ -463,21 +489,21 @@ function updateScores() {
 
 
 // Shuffles an array
-function shuffleArray(a) {
+function shuffleArray(s_arr) {
     let j, x, i;
-    for (i = a.length; i; i--) {
+    for (i = s_arr.length; i; i--) {
         j = Math.floor(Math.random() * i);
-        x = a[i - 1];
-        a[i - 1] = a[j];
-        a[j] = x;
+        x = s_arr[i - 1];
+        s_arr[i - 1] = arr[j];
+        s_arr[j] = x;
     }
-    return a;
+    return s_arr;
 }
 
 
 // Plays one turn of the game
 function playTurn() {
-
+    initial = initial + 1;
     roundFinished = true;
     cardSelected = false;
 
@@ -525,6 +551,7 @@ function revealCards() {
 
     for (let i = 0; i < allCardElements.length; i++) {
         let card = allCardElements[i];
+
         card.classList.remove("worse-card");
         card.classList.remove("better-card");
         card.classList.remove("played-card");

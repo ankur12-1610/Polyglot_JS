@@ -409,7 +409,6 @@ button[disabled=true] {
   background: none;
 }
 
-
 @keyframes showPower {
   0% {
     background: none;

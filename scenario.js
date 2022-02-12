@@ -48,4 +48,126 @@ var scenarios = [
       }
     ]
   },
+  {
+    hackerCard : {
+      description : "3rd",
+      power : 3,
+    },
+    playerCards : [
+      {
+        description : "I c.",
+        power : 5,
+      },
+      {
+        description : "I n.",
+        power : 4,
+      },
+      {
+        description : "I s",
+        power : 1,
+      }
+    ]
+  },
+  { // add the text you'd want should appear on the hacker's card
+    hackerCard : {
+      description : "4th",
+      power : 4,
+    },
+    // add 3 card descriptions you'd want should appear on the player's card. Keeping in mind that at least ONE of them should be an apt counter!
+    playerCards : [
+      {
+        description : " public",
+        power : 5,
+      },
+      {
+        description : "never ",
+        power : 3,
+      },
+      {
+        description : "private",
+        power : 1,
+      }
+    ]
+  },
+  { // add the text you'd want should appear on the hacker's card
+    hackerCard : {
+      description : "I5th card.",
+      power : 4,
+    },
+    // add 3 card descriptions you'd want should appear on the player's card. Keeping in mind that at least ONE of them should be an apt counter!
+    playerCards : [
+      {
+        description : " never",
+        power : 5,
+      },
+      {
+        description : " the web, .",
+        power : 3,
+      },
+      {
+        description : "I conn.",
+        power : 1,
+      }
+    ]
+  },
+  {
+    hackerCard : {
+      description : "7th",
+      power : 3,
+    },
+    playerCards : [
+      {
+        description : "bank.",
+        power : 5,
+      },
+      {
+        description : "I ",
+        power : 4,
+      },
+      {
+        description : "I sent",
+        power : 1,
+      }
+    ]
+  },
+  {
+    hackerCard : {
+      description : "8th.",
+      power : 3,
+    },
+    playerCards : [
+      {
+        description : "I checked .",
+        power : 5,
+      },
+      {
+        description : "I give .",
+        power : 4,
+      },
+      {
+        description : "I sent ",
+        power : 1,
+      }
+    ]
+  },
+  {
+    hackerCard : {
+      description : "9th.",
+      power : 3,
+    },
+    playerCards : [
+      {
+        description : " bank.",
+        power : 5,
+      },
+      {
+        description : "email.",
+        power : 4,
+      },
+      {
+        description : " account.",
+        power : 1,
+      }
+    ]
+  },
 ];

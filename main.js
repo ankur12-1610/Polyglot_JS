@@ -191,7 +191,9 @@ function updateScores(){
   document.querySelector(".hacker-stats .life-left").style.height = hackerPercent + "%";
 }
 
-
+function shuffleArray(arr) {
+  arr.sort(() => Math.random() - 0.5);
+}
 
 // Write a function that Plays one turn of the game
 function playTurn() {
@@ -215,6 +217,9 @@ function playTurn() {
 
   let index = Math.floor(Math.random() * scenarios.length);
 
+  let cardPicking = [0, 1, 2];
+  shuffleArray(cardPicking);
+
   // getting the content ready in the cards
   let hackerCard = document.querySelector(".hacker-card");
   hackerCard.querySelector(".text").innerHTML = scenarios[index].hackerCard.description;
@@ -223,8 +228,8 @@ function playTurn() {
 
   for(let i=0; i<allCardElements.length; i++) {
     if(allCardElements[i].classList.contains("player-card")){
-      allCardElements[i].querySelector(".text").innerHTML = scenarios[index].playerCards[i-1].description;
-      allCardElements[i].querySelector(".power").innerHTML = scenarios[index].playerCards[i-1].power;
+      allCardElements[i].querySelector(".text").innerHTML = scenarios[index].playerCards[cardPicking[i-1]].description;
+      allCardElements[i].querySelector(".power").innerHTML = scenarios[index].playerCards[cardPicking[i-1]].power;
       allCardElements[i].classList.add("prepared");
     }
   }

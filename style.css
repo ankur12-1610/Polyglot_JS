@@ -22,17 +22,18 @@ body {
 .hacker-area h1 {
     padding: 12px 10px 0 10px;
     margin: 0;
-    font-size: 16px;
+    font-size: 25px;
     font-weight: 400;
-    color: rgba(255, 255, 255, .6);
+    color: #003cff;
     font-style: italic;
     position: absolute;
     top: 0;
 }
 
 h1 strong {
-    color: white;
-    font-style: normal;
+    color: rgb(255, 11, 11);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
 }
 
 .hacker-area,
@@ -51,13 +52,13 @@ h1 strong {
 .hacker-area {
     background-position: bottom;
     align-items: flex-end;
-    background-color: #77e65b;
+    background-color: #9df77a;
 }
 
-#5be685 .player-area {
+.player-area {
     background-position: top;
     align-items: top;
-    background-color: #eba625;
+    background-color: #0efdad;
 }
 
 .player-area .card {
@@ -145,6 +146,7 @@ button.next-turn {
     transition: all .15s ease-out;
     background: black;
     display: none;
+    box-align: left;
 }
 
 .during-game .next-turn {
@@ -183,14 +185,19 @@ button:active {
 }
 
 .winner-section button {
-    margin-left: 15px;
+    margin-left: 300px;
+    color: rgb(238, 87, 87);
+    border-color: rgb(225, 159, 165);
+    border-radius: 25px;
+    font-weight: 1000;
+    font-size: 30px;
 }
 
 .winner-message {
-    color: white;
-    font-size: 22px;
+    color: rgb(245, 125, 13);
+    font-size: 30px;
     font-weight: 700;
-    position: relative;
+    position: left;
     top: 1px;
 }
 

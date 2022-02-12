@@ -288,7 +288,7 @@ var hackerLife = 5;
 // Message when the game is over
 var hackerWinnerMessage = "Game Over: You got hacked!";
 var playerWinnerMessage = "Congratuations: You defeated the hacker!";
-var NoResultGameMessage = "Oops: No Result of this match";
+//var NoResultGameMessage = "Oops: No Result of this match";
 // Game code starts here
 var playerStartLife = parseInt(playerLife);
 var hackerStartLife = parseInt(hackerLife);
@@ -296,21 +296,22 @@ var hackerStartLife = parseInt(hackerLife);
 var roundFinished = false;
 var cardSelected = false;
 
-var initial = 0;
-var playerName;
+//var initial = 0;
+//var playerName;
 
 // we will declare the functions for you and you will complete those
-GiveName();
+//
+//GiveName();
 
-function GiveName() {
-    playerName = prompt("Enter Name :")
-    if ((playerName == "") || (playerName === null)) {
-        alert("Invalid name entered");
-        GiveName()
-    } else {
-        document.getElementById("player").innerHTML = playerName;
-    }
-}
+// function GiveName() {
+//     playerName = prompt("Enter Name :")
+//     if ((playerName == "") || (playerName === null)) {
+//         alert("Invalid name entered");
+//         GiveName()
+//     } else {
+//         document.getElementById("player").innerHTML = playerName;
+//     }
+// }
 updateScores();
 
 document.querySelector(".game-board").classList.add("before-game");
@@ -396,184 +397,184 @@ function compareCards() {
 
     if (playerLife <= 0) {
         gameOver("Hacker");
-    } else if (hackerLife <= 0) {
-        gameOver("Player")
-    } else if (initial >= 3) {
-        gameOver("No-Result");
-        initial = 0;
-    }
-
-    roundFinished = true;
-
-    document.querySelector("button.next-turn").removeAttribute("disabled");
-}
-
-// Shows the winner message
-function gameOver(winner) {
-    document.querySelector(".game-board").classList.add("game-over");
-    document.querySelector(".winner-section").style.display = "flex";
-    document.querySelector(".winner-section").classList.remove("player-color");
-    document.querySelector(".winner-section").classList.remove("hacker-color");
-
-    if (winner == "Hacker") {
-        document.querySelector(".winner-message").innerHTML = hackerWinnerMessage;
-        document.querySelector(".winner-section").classList.add("hacker-color");
-        document.querySelector("button.next-turn").setAttribute("disabled");
-    } else if (winner == "Player") {
-        document.querySelector(".winner-message").innerHTML = playerWinnerMessage;
-        document.querySelector(".winner-section").classList.add("player-color");
-        document.querySelector("button.next-turn").setAttribute("disabled");
     } else {
-        document.querySelector(".winner-message").innerHTML = noResultMessage;
-        document.querySelector(".winner-section").classList.add("hacker-color");
-        document.querySelector("button.next-turn").setAttribute("disabled");
-    }
-}
+        gameOver("Player")
+            // } else if (initial >= 3) {
+            //     gameOver("No-Result");
+            //     initial = 0;
+            // }
 
+        roundFinished = true;
 
-// Starts the game
-function startGame() {
-    document.querySelector(".game-board").classList.remove("before-game");
-    document.querySelector(".game-board").classList.add("during-game");
-    playTurn();
-}
-
-
-// Start the game over from scratch
-function restartGame() {
-    document.querySelector(".game-board").classList.remove("game-over");
-    document.querySelector(".game-board").classList.remove("during-game");
-    document.querySelector(".game-board").classList.add("before-game");
-
-    document.querySelector(".winner-section").style.display = "none";
-    document.querySelector(".hacker-card").style.display = "none";
-
-    var cards = allCardElements;
-
-    document.querySelector("button").removeAttribute("disabled");
-
-    for (var i = 0; i < cards.length; i++) {
-        cards[i].style.display = "none";
+        document.querySelector("button.next-turn").removeAttribute("disabled");
     }
 
-    playerLife = playerStartLife;
-    hackerLife = hackerStartLife;
+    // Shows the winner message
+    function gameOver(winner) {
+        document.querySelector(".game-board").classList.add("game-over");
+        document.querySelector(".winner-section").style.display = "flex";
+        document.querySelector(".winner-section").classList.remove("player-color");
+        document.querySelector(".winner-section").classList.remove("hacker-color");
 
-    roundFinished = true;
-    cardSelected = false;
-
-    updateScores();
-}
-
-// Updates the displayed life bar and life totals
-function updateScores() {
-
-    // Update life totals for each player
-    document.querySelector(".player-stats .life-total").innerHTML = playerLife;
-    document.querySelector(".hacker-stats .life-total").innerHTML = hackerLife;
-
-    // Update the player lifebar
-    var playerPercent = playerLife / playerStartLife * 100;
-    if (playerPercent < 0) {
-        playerPercent = 0;
-    }
-    document.querySelector(".player-stats .life-left").style.height = playerPercent + "%";
-
-    // Update the hacker lifebar
-    var hackerPercent = hackerLife / hackerStartLife * 100
-    if (hackerPercent < 0) {
-        hackerPercent = 0;
-    }
-    document.querySelector(".hacker-stats .life-left").style.height = hackerPercent + "%";
-}
-
-
-// Shuffles an array
-function shuffleArray(s_arr) {
-    var j, x, i;
-    for (i = s_arr.length; i; i--) {
-        j = Math.floor(Math.random() * i);
-        x = s_arr[i - 1];
-        s_arr[i - 1] = arr[j];
-        s_arr[j] = x;
-    }
-    return s_arr;
-}
-
-
-// Plays one turn of the game
-function playTurn() {
-    initial = initial + 1;
-    roundFinished = true;
-    cardSelected = false;
-
-    document.querySelector(".game-board").classList.remove("card-selected");
-
-    // Remove "ouch" class from player and hacker thumbnails
-    document.querySelector(".hacker-stats .thumbnail").classList.remove("ouch");
-    document.querySelector(".player-stats .thumbnail").classList.remove("ouch");
-
-    // Hides the "next turn" button, will show again when turn is over
-    document.querySelector(".next-turn").setAttribute("disabled", "true");
-
-    for (var i = 0; i < allCardElements.length; i++) {
-        var card = allCardElements[i];
-        card.classList.remove("showCard");
-    }
-
-    setTimeout(function() {
-        revealCards();
-    }, 500);
-}
-
-function revealCards() {
-
-
-    var j = 0;
-    var cardIndexes = shuffleArray([0, 1, 2]);
-
-    // Get scenario cards
-    console.log("scenarios.length == " + scenarios.length);
-
-    var randomScenarioIndex = Math.floor(Math.random() * scenarios.length);
-    var scenario = scenarios[randomScenarioIndex];
-    console.log(scenario.hackerCard.description);
-
-    scenarios.splice(randomScenarioIndex, 1);
-
-    console.log("scenarios.length after splice == " + scenarios.length);
-
-    var hackerCard = scenario.hackerCard;
-    var hackerCardEl = document.querySelector(".hacker-area .card");
-
-    // Contents of the player cards
-    var playerCards = scenario.playerCards;
-
-    for (var i = 0; i < allCardElements.length; i++) {
-        var card = allCardElements[i];
-
-        card.classList.remove("worse-card");
-        card.classList.remove("better-card");
-        card.classList.remove("played-card");
-        card.classList.remove("tie-card");
-        card.classList.remove("prepared");
-        card.classList.remove("reveal-power");
-        // Display the payer card details
-        if (card.classList.contains("player-card")) {
-            card.querySelector(".text").innerHTML = playerCards[cardIndexes[j]].description;
-            card.querySelector(".power").innerHTML = playerCards[cardIndexes[j]].power;
-            j++;
+        if (winner == "Hacker") {
+            document.querySelector(".winner-message").innerHTML = hackerWinnerMessage;
+            document.querySelector(".winner-section").classList.add("hacker-color");
+            //document.querySelector("button.next-turn").setAttribute("disabled");
+        } else {
+            document.querySelector(".winner-message").innerHTML = playerWinnerMessage;
+            document.querySelector(".winner-section").classList.add("player-color");
+            //document.querySelector("button.next-turn").setAttribute("disabled");
+            // } else {
+            //     document.querySelector(".winner-message").innerHTML = noResultMessage;
+            //     document.querySelector(".winner-section").classList.add("hacker-color");
+            //     //document.querySelector("button.next-turn").setAttribute("disabled");
+            // }
         }
-        // Reveal each card one by one with a delay of 100ms
-        setTimeout(function(card, j) {
-            return function() {
-                card.classList.remove("prepared");
-                card.style.display = "block";
-                card.classList.add("showCard");
+
+
+        // Starts the game
+        function startGame() {
+            document.querySelector(".game-board").classList.remove("before-game");
+            document.querySelector(".game-board").classList.add("during-game");
+            playTurn();
+        }
+
+
+        // Start the game over from scratch
+        function restartGame() {
+            document.querySelector(".game-board").classList.remove("game-over");
+            document.querySelector(".game-board").classList.remove("during-game");
+            document.querySelector(".game-board").classList.add("before-game");
+
+            document.querySelector(".winner-section").style.display = "none";
+            document.querySelector(".hacker-card").style.display = "none";
+
+            var cards = allCardElements;
+
+            document.querySelector("button").removeAttribute("disabled");
+
+            for (var i = 0; i < cards.length; i++) {
+                cards[i].style.display = "none";
             }
-        }(card, i), parseInt(i + 1) * 200);
-    }
-    // Display the hacker card
-    hackerCardEl.querySelector(".text").innerHTML = hackerCard.description;
-    hackerCardEl.querySelector(".power").innerHTML = hackerCard.power;
-}
+
+            playerLife = playerStartLife;
+            hackerLife = hackerStartLife;
+
+            roundFinished = true;
+            cardSelected = false;
+
+            updateScores();
+        }
+
+        // Updates the displayed life bar and life totals
+        function updateScores() {
+
+            // Update life totals for each player
+            document.querySelector(".player-stats .life-total").innerHTML = playerLife;
+            document.querySelector(".hacker-stats .life-total").innerHTML = hackerLife;
+
+            // Update the player lifebar
+            var playerPercent = playerLife / playerStartLife * 100;
+            if (playerPercent < 0) {
+                playerPercent = 0;
+            }
+            document.querySelector(".player-stats .life-left").style.height = playerPercent + "%";
+
+            // Update the hacker lifebar
+            var hackerPercent = hackerLife / hackerStartLife * 100
+            if (hackerPercent < 0) {
+                hackerPercent = 0;
+            }
+            document.querySelector(".hacker-stats .life-left").style.height = hackerPercent + "%";
+        }
+
+
+        // Shuffles an array
+        function shuffleArray(s_arr) {
+            var j, x, i;
+            for (i = s_arr.length; i; i--) {
+                j = Math.floor(Math.random() * i);
+                x = s_arr[i - 1];
+                s_arr[i - 1] = arr[j];
+                s_arr[j] = x;
+            }
+            return s_arr;
+        }
+
+
+        // Plays one turn of the game
+        function playTurn() {
+            initial = initial + 1;
+            roundFinished = true;
+            cardSelected = false;
+
+            document.querySelector(".game-board").classList.remove("card-selected");
+
+            // Remove "ouch" class from player and hacker thumbnails
+            document.querySelector(".hacker-stats .thumbnail").classList.remove("ouch");
+            document.querySelector(".player-stats .thumbnail").classList.remove("ouch");
+
+            // Hides the "next turn" button, will show again when turn is over
+            document.querySelector(".next-turn").setAttribute("disabled", "true");
+
+            for (var i = 0; i < allCardElements.length; i++) {
+                var card = allCardElements[i];
+                card.classList.remove("showCard");
+            }
+
+            setTimeout(function() {
+                revealCards();
+            }, 500);
+        }
+
+        function revealCards() {
+
+
+            var j = 0;
+            var cardIndexes = shuffleArray([0, 1, 2]);
+
+            // Get scenario cards
+            console.log("scenarios.length == " + scenarios.length);
+
+            var randomScenarioIndex = Math.floor(Math.random() * scenarios.length);
+            var scenario = scenarios[randomScenarioIndex];
+            console.log(scenario.hackerCard.description);
+
+            scenarios.splice(randomScenarioIndex, 1);
+
+            console.log("scenarios.length after splice == " + scenarios.length);
+
+            var hackerCard = scenario.hackerCard;
+            var hackerCardEl = document.querySelector(".hacker-area .card");
+
+            // Contents of the player cards
+            var playerCards = scenario.playerCards;
+
+            for (var i = 0; i < allCardElements.length; i++) {
+                var card = allCardElements[i];
+
+                card.classList.remove("worse-card");
+                card.classList.remove("better-card");
+                card.classList.remove("played-card");
+                card.classList.remove("tie-card");
+                card.classList.remove("prepared");
+                card.classList.remove("reveal-power");
+                // Display the payer card details
+                if (card.classList.contains("player-card")) {
+                    card.querySelector(".text").innerHTML = playerCards[cardIndexes[j]].description;
+                    card.querySelector(".power").innerHTML = playerCards[cardIndexes[j]].power;
+                    j++;
+                }
+                // Reveal each card one by one with a delay of 100ms
+                setTimeout(function(card, j) {
+                    return function() {
+                        card.classList.remove("prepared");
+                        card.style.display = "block";
+                        card.classList.add("showCard");
+                    }
+                }(card, i), parseInt(i + 1) * 200);
+            }
+            // Display the hacker card
+            hackerCardEl.querySelector(".text").innerHTML = hackerCard.description;
+            hackerCardEl.querySelector(".power").innerHTML = hackerCard.power;
+        }

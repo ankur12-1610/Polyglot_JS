@@ -23,9 +23,14 @@ var playerWinnerMessage = "Write the message here";
 
 var playerStartLife = parseInt(playerLife);
 var hackerStartLife = parseInt(hackerLife);
+const startbutton=document.querySelector(".start-game");
 
 // we will declare the functions for you and you will complete those 
 updateScores();
+// Finally write the function that reveals the cards. Use 
+function revealCards(){
+
+}
 
 // you learnt DOM manipulation right? here's an example of the same. Go ahead and use manipulate the DOM!
 document.querySelector(".game-board").classList.add("before-game");
@@ -84,6 +89,9 @@ function gameOver(winner) {
 
 // Write a function that starts the game
 function startGame() {
+  startbutton.parentNode.removeChild(startbutton);
+  revealCards();
+
 
 }
 
@@ -118,7 +126,3 @@ function playTurn() {
 
 }
 
-// Finally write the function that reveals the cards. Use 
-function revealCards(){
-
-}

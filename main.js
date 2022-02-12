@@ -2,7 +2,7 @@
 
 // //----- We've curated this assignment for someone staring out in exploring the beauty of JavaScript and would urge you to go through the resources shared with you before you start with this. ----- // 
 
-// //Go through the CSS file as well to get a hold of all the attributes we've added. You're free to add some of your own and maybe delete some of ours xD
+// //Go through the CSS file as well to get a hold of all the attributes we've added. You're free to add some of your own and maybe devare some of ours xD
 
 // //The point is, we want you to have fun and use all the concepts while doing this task. In case of any doubts, feel free to reach out to us!
 
@@ -283,21 +283,21 @@
 //     hackerCardEl.querySelector(".power").innerHTML = hackerCard.power;
 // }
 // }// Set starting life totals here
-let playerLife = 5;
-let hackerLife = 5;
+var playerLife = 5;
+var hackerLife = 5;
 // Message when the game is over
-let hackerWinnerMessage = "Game Over: You got hacked!";
-let playerWinnerMessage = "Congratuations: You defeated the hacker!";
-let NoResultGameMessage = "Oops: No Result of this match";
+var hackerWinnerMessage = "Game Over: You got hacked!";
+var playerWinnerMessage = "Congratuations: You defeated the hacker!";
+var NoResultGameMessage = "Oops: No Result of this match";
 // Game code starts here
-let playerStartLife = parseInt(playerLife);
-let hackerStartLife = parseInt(hackerLife);
+var playerStartLife = parseInt(playerLife);
+var hackerStartLife = parseInt(hackerLife);
 
-let roundFinished = false;
-let cardSelected = false;
+var roundFinished = false;
+var cardSelected = false;
 
-let initial = 0;
-let playerName;
+var initial = 0;
+var playerName;
 
 // we will declare the functions for you and you will complete those
 GiveName();
@@ -315,11 +315,11 @@ updateScores();
 
 document.querySelector(".game-board").classList.add("before-game");
 
-let allCardElements = document.querySelectorAll(".card");
+var allCardElements = document.querySelectorAll(".card");
 
 // Adds click handler to all player card elements
-for (let i = 0; i < allCardElements.length; i++) {
-    let card = allCardElements[i];
+for (var i = 0; i < allCardElements.length; i++) {
+    var card = allCardElements[i];
     if (card.classList.contains("player-card")) {
         card.addEventListener("click", function(e) {
             cardClicked(this);
@@ -353,27 +353,27 @@ function cardClicked(cardEl) {
 
 // Shows the power level on the player card
 function revealPlayerPower() {
-    let playerCard = document.querySelector(".played-card");
+    var playerCard = document.querySelector(".played-card");
     playerCard.classList.add("reveal-power");
 }
 
 // Shows the power level on the hacker card
 function revealHackerPower() {
-    let hackerCard = document.querySelector(".hacker-card");
+    var hackerCard = document.querySelector(".hacker-card");
     hackerCard.classList.add("reveal-power");
 }
 
 function compareCards() {
-    let playerCard = document.querySelector(".played-card");
-    let playerPowerEl = playerCard.querySelector(".power");
+    var playerCard = document.querySelector(".played-card");
+    var playerPowerEl = playerCard.querySelector(".power");
 
-    let hackerCard = document.querySelector(".hacker-card");
-    let hackerPowerEl = hackerCard.querySelector(".power");
+    var hackerCard = document.querySelector(".hacker-card");
+    var hackerPowerEl = hackerCard.querySelector(".power");
 
-    let playerPower = parseInt(playerPowerEl.innerHTML);
-    let hackerPower = parseInt(hackerPowerEl.innerHTML);
+    var playerPower = parseInt(playerPowerEl.innerHTML);
+    var hackerPower = parseInt(hackerPowerEl.innerHTML);
 
-    let power_Difference = playerPower - hackerPower;
+    var power_Difference = playerPower - hackerPower;
 
     if (power_Difference < 0) {
         // Player Loses
@@ -448,11 +448,11 @@ function restartGame() {
     document.querySelector(".winner-section").style.display = "none";
     document.querySelector(".hacker-card").style.display = "none";
 
-    let cards = allCardElements;
+    var cards = allCardElements;
 
     document.querySelector("button").removeAttribute("disabled");
 
-    for (let i = 0; i < cards.length; i++) {
+    for (var i = 0; i < cards.length; i++) {
         cards[i].style.display = "none";
     }
 
@@ -473,14 +473,14 @@ function updateScores() {
     document.querySelector(".hacker-stats .life-total").innerHTML = hackerLife;
 
     // Update the player lifebar
-    let playerPercent = playerLife / playerStartLife * 100;
+    var playerPercent = playerLife / playerStartLife * 100;
     if (playerPercent < 0) {
         playerPercent = 0;
     }
     document.querySelector(".player-stats .life-left").style.height = playerPercent + "%";
 
     // Update the hacker lifebar
-    let hackerPercent = hackerLife / hackerStartLife * 100
+    var hackerPercent = hackerLife / hackerStartLife * 100
     if (hackerPercent < 0) {
         hackerPercent = 0;
     }
@@ -490,7 +490,7 @@ function updateScores() {
 
 // Shuffles an array
 function shuffleArray(s_arr) {
-    let j, x, i;
+    var j, x, i;
     for (i = s_arr.length; i; i--) {
         j = Math.floor(Math.random() * i);
         x = s_arr[i - 1];
@@ -516,8 +516,8 @@ function playTurn() {
     // Hides the "next turn" button, will show again when turn is over
     document.querySelector(".next-turn").setAttribute("disabled", "true");
 
-    for (let i = 0; i < allCardElements.length; i++) {
-        let card = allCardElements[i];
+    for (var i = 0; i < allCardElements.length; i++) {
+        var card = allCardElements[i];
         card.classList.remove("showCard");
     }
 
@@ -529,28 +529,28 @@ function playTurn() {
 function revealCards() {
 
 
-    let j = 0;
-    let cardIndexes = shuffleArray([0, 1, 2]);
+    var j = 0;
+    var cardIndexes = shuffleArray([0, 1, 2]);
 
     // Get scenario cards
     console.log("scenarios.length == " + scenarios.length);
 
-    let randomScenarioIndex = Math.floor(Math.random() * scenarios.length);
-    let scenario = scenarios[randomScenarioIndex];
+    var randomScenarioIndex = Math.floor(Math.random() * scenarios.length);
+    var scenario = scenarios[randomScenarioIndex];
     console.log(scenario.hackerCard.description);
 
     scenarios.splice(randomScenarioIndex, 1);
 
     console.log("scenarios.length after splice == " + scenarios.length);
 
-    let hackerCard = scenario.hackerCard;
-    let hackerCardEl = document.querySelector(".hacker-area .card");
+    var hackerCard = scenario.hackerCard;
+    var hackerCardEl = document.querySelector(".hacker-area .card");
 
     // Contents of the player cards
-    let playerCards = scenario.playerCards;
+    var playerCards = scenario.playerCards;
 
-    for (let i = 0; i < allCardElements.length; i++) {
-        let card = allCardElements[i];
+    for (var i = 0; i < allCardElements.length; i++) {
+        var card = allCardElements[i];
 
         card.classList.remove("worse-card");
         card.classList.remove("better-card");

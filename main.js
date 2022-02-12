@@ -36,7 +36,7 @@ var allCardElements = document.querySelectorAll(".card");
 // Adds click handler to all player card elements so that your cards are actionable
 for(let i=0; i<allCardElements.length; i++) {
   if(allCardElements[i].classList.contains("player-card")){
-    allCardElements[i].addEventListener('click', (e) => cardClicked(e.target));
+    allCardElements[i].addEventListener('click', (e) => cardClicked(allCardElements[i]));
   }
 }
 
@@ -85,8 +85,8 @@ function compareCards(){
   let playedCard = document.querySelector(".played-card");
   let hackerCard = document.querySelector(".hacker-card");
 
-  let playerPoint = parseInt(playedCard.querySelector(".power").textContent);
-  let hackerPoint = parseInt(hackerCard.querySelector(".power").textContent);
+  let playerPoint = parseInt(playedCard.querySelector(".power").innerHTML);
+  let hackerPoint = parseInt(hackerCard.querySelector(".power").innerHTML);
 
   let hackerIcon = document.querySelector(".hacker-stats .thumbnail");
   let playerIcon = document.querySelector(".player-stats .thumbnail");
@@ -131,7 +131,6 @@ function gameOver(winner) {
   document.querySelector(".game-board").classList.remove("during-game");
   document.querySelector(".game-board").classList.add("game-over");
   document.querySelector(".winner-section").style.display = "flex"; //changing it from none
-  console.log("it should've added game-ver tp the game board rn");
 }
 
 
@@ -218,17 +217,14 @@ function playTurn() {
 
   // getting the content ready in the cards
   let hackerCard = document.querySelector(".hacker-card");
-  hackerCard.querySelector(".text").textContent = scenarios[index].hackerCard.description;
-  hackerCard.querySelector(".power").textContent = scenarios[index].hackerCard.power;
+  hackerCard.querySelector(".text").innerHTML = scenarios[index].hackerCard.description;
+  hackerCard.querySelector(".power").innerHTML = scenarios[index].hackerCard.power;
   hackerCard.classList.add("prepared");
 
   for(let i=0; i<allCardElements.length; i++) {
     if(allCardElements[i].classList.contains("player-card")){
-      allCardElements[i].querySelector(".text").textContent = scenarios[index].playerCards[i-1].description;
-      // allCardElements[i].querySelector(".text").textContent = "jello!";
-      // console.log(scenarios[index].playerCards[i-1]);
-      allCardElements[i].querySelector(".power").textContent = scenarios[index].playerCards[i-1].power;
-      // allCardElements[i].querySelector(".power").textContent = "1";
+      allCardElements[i].querySelector(".text").innerHTML = scenarios[index].playerCards[i-1].description;
+      allCardElements[i].querySelector(".power").innerHTML = scenarios[index].playerCards[i-1].power;
       allCardElements[i].classList.add("prepared");
     }
   }

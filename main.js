@@ -76,7 +76,7 @@ function revealPlayerPower(){
 
 // Write a function that shows the power level on the hacker card
 function revealHackerPower(){
-  var hackerCard = document.querySelector(".hacker-card");
+  // var hackerCard = document.querySelector(".hacker-card");
   hackerCard.classList.add("reveal-power");
   console.log("hacker power revealing");
 }
@@ -226,15 +226,8 @@ function playTurn()
     hackerCard.classList.remove("worse-card");
     playerCard.classList.remove("better-card");
     console.log("removed tags1");
-  }
-  else
-  {
-    hackerCard.classList.remove("better-card");
-    playerCard.classList.remove("worse-card");
-    console.log( "removed tags2");
-  }
-  
-  playerCard.classList.remove("reveal-power");
+
+    playerCard.classList.remove("reveal-power");
   hackerCard.classList.remove("reveal-power");
 
   var playerCard = document.querySelector(".played-card");
@@ -245,21 +238,59 @@ function playTurn()
 
     playerCardsArr.forEach((el) => { 
   el.classList.remove("showCard");}); 
+  }
+  else if(c=1)
+  {
+    hackerCard.classList.remove("better-card");
+    playerCard.classList.remove("worse-card");
+    console.log( "removed tags2");
+
+    playerCard.classList.remove("reveal-power");
+  hackerCard.classList.remove("reveal-power");
+
+  var playerCard = document.querySelector(".played-card");
+  playerCard.classList.remove("played-card");
+
+  document.querySelector(".game-board").classList.remove("card-selected");
+  hackerCard.classList.remove("showCard");
+
+    playerCardsArr.forEach((el) => { 
+  el.classList.remove("showCard");}); 
+  }
+  
+  // playerCard.classList.remove("reveal-power");
+  // hackerCard.classList.remove("reveal-power");
+
+  // var playerCard = document.querySelector(".played-card");
+  // playerCard.classList.remove("played-card");
+
+  // document.querySelector(".game-board").classList.remove("card-selected");
+  // hackerCard.classList.remove("showCard");
+
+  //   playerCardsArr.forEach((el) => { 
+  // el.classList.remove("showCard");}); 
     
 
-    hackerCard.classList.add("showCard");
-    playerCardsArr.forEach((el) => { 
-    el.classList.add("showCard");});
+    
+    // playerCardsArr.forEach((el) => { 
+    // el.classList.add("showCard");});
 
-    // setTimeout(function(){
-    //   rer();
-    // },5000)
+    setTimeout(function(){
+      prrer();
+    },1100)
+    function prrer(){
+      playerCardsArr.forEach((el) => { 
+        el.classList.add("showCard");});
+       console.log("showing 2nd one");
+    }
 
-    // function rer(){
-    //   var hackerCard = document.querySelector(".hacker-card");
-    //   hackerCard.classList.add("showCard");
-    //    console.log("showing 2nd one");
-    // }
+    setTimeout(function(){
+      her();
+    },600)
+    function her(){
+      hackerCard.classList.add("showCard");
+       console.log("showing 2nd one");
+    }
 
   hackerCard.firstElementChild.innerText = scenarios[count].hackerCard.description;
   hackerCard.lastElementChild.innerText = scenarios[count].hackerCard.power;

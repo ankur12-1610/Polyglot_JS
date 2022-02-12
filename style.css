@@ -183,7 +183,8 @@ button:active {
   animation: winnerAppear .4s ease-out;
 }
 
-.winner-section button {
+.winner-section button 
+{
   margin-left: 15px;
 }
 

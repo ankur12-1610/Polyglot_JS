@@ -109,7 +109,7 @@ function compareCards()
   }
 
   updateScores();
-  
+  gameOver();
   // setTimeout(function(){
   //   restartGame();
   // },2000)
@@ -120,9 +120,26 @@ function compareCards()
 }
 
 //Use conditional statements and complete the function that shows the winner message
-function gameOver(winner) 
+function gameOver() 
 {
   
+  console.log("gameover initial");
+  if(playerLife <= 0)
+  {
+    document.querySelector(".winner-section").style.display = "block";
+    document.querySelector(".next-turn").style.display = "none";
+    document.querySelector(".winner-message").innerHTML = hackerWinnerMessage;
+    console.log("gameover");
+    restartGame();
+  }
+  else if(hackerLife <= 0)
+  {
+    document.querySelector(".winner-section").style.display = "block";
+    document.querySelector(".next-turn").style.display = "none";
+    document.querySelector(".winner-message").innerHTML = playerWinnerMessage;
+    console.log("gameover");
+    restartGame();
+  }
 }
 
 // Write a function that starts the game
@@ -186,15 +203,13 @@ function firstplayTurn()
 
 function restartGame()
 {
-  // setTimeout(function(){
-  //   rer();
-  // },5000)
 
-  // function rer(){
-  //   var hackerCard = document.querySelector(".hacker-card");
-  //   hackerCard.classList.remove("showCard");
-  //    console.log("showing 2nd one");
-  // }
+  playerLife = 5;
+  hackerLife = 5;
+  cardSelected=false;
+  count=0;
+  c=0;
+console.log("NEW GAME");
 }
 
 function playTurn() 
@@ -204,6 +219,8 @@ function playTurn()
   cardSelected = false;
   var playerCard = document.querySelector(".played-card");
   var hackerCard = document.querySelector(".hacker-card");
+
+
   if(c==0)
   {
     hackerCard.classList.remove("worse-card");
@@ -228,7 +245,7 @@ function playTurn()
 
     playerCardsArr.forEach((el) => { 
   el.classList.remove("showCard");}); 
-
+    
 
     hackerCard.classList.add("showCard");
     playerCardsArr.forEach((el) => { 
@@ -243,7 +260,6 @@ function playTurn()
     //   hackerCard.classList.add("showCard");
     //    console.log("showing 2nd one");
     // }
-
 
   hackerCard.firstElementChild.innerText = scenarios[count].hackerCard.description;
   hackerCard.lastElementChild.innerText = scenarios[count].hackerCard.power;

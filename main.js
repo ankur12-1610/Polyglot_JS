@@ -57,7 +57,7 @@ function cardClicked(cardEl) {
   },500)
 
   setTimeout(function(){
-    revealPlayerPower();
+    revealPlayerPower(cardEl);
   },800)
   
   setTimeout(function(){
@@ -66,12 +66,8 @@ function cardClicked(cardEl) {
 }
 
 // Now write a function that shows the power level on the player card
-function revealPlayerPower(){
-  for(let i=0; i<allCardElements.length; i++) {
-    if(allCardElements[i].classList.contains("player-card")){
-      allCardElements[i].classList.add("reveal-power");
-    }
-  }
+function revealPlayerPower(cardEl){
+  cardEl.classList.add("reveal-power");
 }
 
 // Write a function that shows the power level on the hacker card

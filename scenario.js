@@ -48,4 +48,67 @@ var scenarios = [
       }
     ]
   },
+  { // add the text you'd want should appear on the hacker's card
+    hackerCard : {
+      description : "I sent you a mail congratulating you for winning the lottery and ask for a giftcard for the transaction costs.",
+      power : 3,
+    },
+    // add 3 card descriptions you'd want should appear on the player's card. Keeping in mind that at least ONE of them should be an apt counter!
+    playerCards : [
+      {
+        description : "I report the email as scam.",
+        power : 5,
+      },
+      {
+        description : "I don't buy the giftcard and ask for the money first.",
+        power : 2,
+      },
+      {
+        description : "I send them the required giftcard and wait for my award.",
+        power : 1,
+      }
+    ]
+  },
+  { // add the text you'd want should appear on the hacker's card
+    hackerCard : {
+      description : "I meet you on a forum and ask you for places to visit in your city.",
+      power : 4,
+    },
+    // add 3 card descriptions you'd want should appear on the player's card. Keeping in mind that at least ONE of them should be an apt counter!
+    playerCards : [
+      {
+        description : "I don't give away any personal infomation online.",
+        power : 5,
+      },
+      {
+        description : "I tell you some places a few cities over so they don't know my city.",
+        power : 3,
+      },
+      {
+        description : "I tell you about all my favorite places to visit in the city.",
+        power : 1,
+      }
+    ]
+  },
+  { // add the text you'd want should appear on the hacker's card
+    hackerCard : {
+      description : "I try to crack your password to a major site.",
+      power : 3,
+    },
+    // add 3 card descriptions you'd want should appear on the player's card. Keeping in mind that at least ONE of them should be an apt counter!
+    playerCards : [
+      {
+        description : "I have different strong passwords on all sites and change them regularly.",
+        power : 5,
+      },
+      {
+        description : "I have one strong password on all the sites I use.",
+        power : 4,
+      },
+      {
+        description : "I have a generic password that I can easily remember.",
+        power : 1,
+      }
+    ]
+  },
 ];

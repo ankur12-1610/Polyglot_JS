@@ -48,4 +48,44 @@ var scenarios = [
       }
     ]
   },
+  {
+    hackerCard : {
+      description : "I watched you type your password and hacked your account",
+      power : 2,
+    },
+    playerCards : [
+      {
+        description : "I deleted the account and started a new one",
+        power : 1,
+      },
+      {
+        description : "I changed my password on all of the accounts because they are all the same.",
+        power : 4,
+      },
+      {
+        description : "I use different password for all of my different accounts.",
+        power : 5,
+      }
+    ]
+  },
+  {
+    hackerCard : {
+      description : "I hacked Your system and all your data is deleted now.",
+      power : 2,
+    },
+    playerCards : [
+      {
+        description : "I have my data backed up in local and external hard drive",
+        power : 3,
+      },
+      {
+        description : "I never backed up my data in any way.",
+        power : 1,
+      },
+      {
+        description : "I follow the 3-2-1 backup rule",
+        power : 5,
+      }
+    ]
+  },
 ];

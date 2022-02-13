@@ -48,4 +48,25 @@ var scenarios = [
       }
     ]
   },
+  {
+    hackerCard : {
+      description : "I made a fake movie downloading platform for tracking your activity",
+      power : 2,
+    },
+    playerCards : [
+      {
+        description : "I am not interested in watching movies",
+        power : 3,
+      },
+      {
+        description : "I am only interested in watching movies and dont care about such stuffs",
+        power : 0,
+      },
+      {
+        description : "I never download movies from such third party platforms",
+        power : 4,
+      }
+    ]
+  },
+
 ];

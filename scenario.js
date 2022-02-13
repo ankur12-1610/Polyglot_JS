@@ -50,86 +50,88 @@ var scenarios = [
   },
   {
     hackerCard : {
-      description : "3rd",
+      description : "Hello hello ,your bank account will be closed if you dont tell your OTP!!! ",
       power : 3,
     },
     playerCards : [
       {
-        description : "I c.",
+        description : "I will not tell OTP to strangers.",
         power : 5,
       },
       {
-        description : "I n.",
+        description : "Wait a little,You are from which bank?",
         power : 4,
       },
       {
-        description : "I s",
+        description : "Yes my OTP is 620936.",
         power : 1,
       }
     ]
   },
   { // add the text you'd want should appear on the hacker's card
     hackerCard : {
-      description : "4th",
+      description : "Hey,I am leaking your facebook photo",
       power : 4,
     },
     // add 3 card descriptions you'd want should appear on the player's card. Keeping in mind that at least ONE of them should be an apt counter!
     playerCards : [
       {
-        description : " public",
-        power : 5,
+        description : " Please dont public it.",
+        power : 1,
       },
       {
-        description : "never ",
+        description : "I am deactivating my account.",
         power : 3,
       },
       {
-        description : "private",
-        power : 1,
-      }
-    ]
-  },
-  { // add the text you'd want should appear on the hacker's card
-    hackerCard : {
-      description : "I5th card.",
-      power : 4,
-    },
-    // add 3 card descriptions you'd want should appear on the player's card. Keeping in mind that at least ONE of them should be an apt counter!
-    playerCards : [
-      {
-        description : " never",
+        description : "Haha!My account is private",
         power : 5,
-      },
-      {
-        description : " the web, .",
-        power : 3,
-      },
-      {
-        description : "I conn.",
-        power : 1,
       }
     ]
   },
+ 
   {
     hackerCard : {
-      description : "7th",
-      power : 3,
+      description : "I sent a fraud link in message.",
+      power : 4,
     },
     playerCards : [
       {
-        description : "bank.",
+        description : "I opened the link but only checked it.",
+        power : 3,
+      },
+      {
+        description : "I ignored the message as we should not click random link.",
         power : 5,
       },
       {
-        description : "I ",
-        power : 4,
-      },
-      {
-        description : "I sent",
+        description : "I filled the form in link.",
         power : 1,
       }
     ]
   },
+  { // add the text you'd want should appear on the hacker's card
+    hackerCard : {
+      description : "I set up a fake Wi-Fi station to steal people’s email and track them online.",
+      power : 4,
+    },
+    // add 3 card descriptions you'd want should appear on the player's card. Keeping in mind that at least ONE of them should be an apt counter!
+    playerCards : [
+      {
+        description : "I never use public wifi networks.",
+        power : 5,
+      },
+      {
+        description : "I browse the web, but I never do any personal business on a public wifi network.",
+        power : 3,
+      },
+      {
+        description : "I connect to any wifi network I can use in public.",
+        power : 1,
+      }
+    ]
+  },
+ 
   {
     hackerCard : {
       description : "8th.",

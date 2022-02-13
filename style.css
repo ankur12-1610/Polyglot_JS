@@ -183,7 +183,8 @@ button:active {
   animation: winnerAppear .4s ease-out;
 }
 
-.winner-section button {
+.winner-section button 
+{
   margin-left: 15px;
 }
 
@@ -408,7 +409,6 @@ button[disabled=true] {
   animation: showPower .2s ease-out;
   background: none;
 }
-
 
 @keyframes showPower {
   0% {

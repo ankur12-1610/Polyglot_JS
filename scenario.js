@@ -48,4 +48,45 @@ var scenarios = [
       }
     ]
   },
+  { 
+    hackerCard : {
+      description : "I called your cell phone asking for your OTP.",
+      power : 3,
+    },
+    playerCards : [
+      {
+        description : "I cut the call immediately.",
+        power : 4,
+      },
+      {
+        description : "I blocked and reported your number as fraud.",
+        power : 5,
+      },
+      {
+        description : "I gave you my OTP.",
+        power : 1,
+      }
+    ]
+  },
+  { 
+    hackerCard : {
+      description : "I asked for your credit card's CVV to 'renew it'.",
+      power : 3,
+    },
+    // add 3 card descriptions you'd want should appear on the player's card. Keeping in mind that at least ONE of them should be an apt counter!
+    playerCards : [
+      {
+        description : "Banks never ask for CVV.",
+        power : 4,
+      },
+      {
+        description : "I reported your number to the bank's online fraud division.",
+        power : 5,
+      },
+      {
+        description : "I gave you all the deatils.",
+        power : 1,
+      }
+    ]
+  }
 ];

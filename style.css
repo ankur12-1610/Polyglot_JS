@@ -36,6 +36,12 @@ h1 strong {
   font-style: normal;
 }
 
+.hacker-name{
+  font-size: 22px;
+  font-weight: 400;
+  font-style: italic;
+}
+
 .hacker-area,
 .player-area {
   position: relative;

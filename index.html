@@ -18,9 +18,9 @@
     <div class="hacker-area">
       <h1>
         <strong>HACKER CARDS</strong> <br />
-        Choose the card to stop hackers' attack
+        <div class="hacker-name"></div>
+        <div class="stop-hacker"></div>
       </h1>
-
       <div class="stats hacker-stats">
         <div class="life-bar">
           <div class="life-left hacker-color"></div>
@@ -69,7 +69,7 @@
   <div class="winner-section">
     <div>
       <span class="winner-message">You got hacked!</span>
-      <button class="restart" onclick="location.reload()">Play Again!</button>
+      <button class="restart" onclick="restartGame()">Play Again!</button>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

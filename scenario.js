@@ -29,6 +29,7 @@ var scenarios = [
     ]
   },
   {
+    // 2
     hackerCard : {
       description : "I sent a fake email from your bank asking for your account details.",
       power : 3,
@@ -44,6 +45,48 @@ var scenarios = [
       },
       {
         description : "I sent the details you asked for so you could check on my account.",
+        power : 1,
+      }
+    ]
+  },
+  {
+    // 3
+    hackerCard : {
+      description : "I sent a fake link via message claiming for a lottery of 20 lakhs INR.",
+      power : 4,
+    },
+    playerCards : [
+      {
+        description : "I opened the link but didnt fill the details.",
+        power : 3,
+      },
+      {
+        description : "I ignored the message as I didnt filled for any lottery.",
+        power : 5,
+      },
+      {
+        description : "I sent the details asked by him!",
+        power : 1,
+      }
+    ]
+  },
+  {
+    // 4
+    hackerCard : {
+      description : "I sent an malicious software claiming free movies present in Netflix, amazon prime and hotstar.",
+      power : 3,
+    },
+    playerCards : [
+      {
+        description : "I use Telegram 😎.",
+        power : 4,
+      },
+      {
+        description : "I thought for a while then installed it.",
+        power : 2,
+      },
+      {
+        description : "I installed the app as I am a binge watcher.",
         power : 1,
       }
     ]

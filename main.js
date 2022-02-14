@@ -19,14 +19,24 @@ var playerWinnerMessage = "You Won!! Congratulations!!";
 
           // ---------------Game code starts here ---------------//
 
-// declare a few handy variables like we've done :p
-var hacker
-var player
 var playerStartLife = parseInt(playerLife);
 var hackerStartLife = parseInt(hackerLife);
-
-// we will declare the functions for you and you will complete those 
+var cardSelected = false
 updateScores();
+document.querySelector(".game-board").classList.add(".before-game");
+var allCardElements = document.querySelectorAll(".card");
+for(let i=0; i<allCardElements.length; i++) {
+  if(allCardElements[i].classList.contains("player-card")){
+    allCardElements[i].addEventListener('click', (e) => cardClicked(e.target));
+  }
+}
+if(playerLife<=0) {
+  gameOver(0);
+} else if(hackerLife<=0) {
+  gameOver(1);
+}
+
+document.querySelector(".next-turn").removeAttribute("disabled");
 
 // you learnt DOM manipulation right? here's an example of the same. Go ahead and use manipulate the DOM!
 document.querySelector(".game-board").classList.add("before-game");
@@ -79,7 +89,15 @@ function compareCards(){
 
 //Use conditional statements and complete the function that shows the winner message
 function gameOver(winner) {
-  //if winner === hacker:
+  const winMessage = document.querySelector(".winner-message");
+  if(winner == 0) {
+    winMessage.textContent = hackerWinnerMessage;
+  } else if (winner == 1) {
+    winMessage.textContent = playerWinnerMessage;
+  }
+  document.querySelector(".game-board").classList.remove("during-game");
+  document.querySelector(".game-board").classList.add("game-over");
+  document.querySelector(".winner-section").style.display = "flex"; 
 }
 
 
@@ -93,7 +111,20 @@ function startGame() {
 
 // Now write a function that starts the game over from scratch
 function restartGame(){
-
+  playerLife = parseInt(playerStartLife);
+  hackerLife = parseInt(hackerStartLife);
+  let playedCard = document.querySelector(".played-card");
+  playedCard.classList.remove("played-card");
+  document.querySelector(".game-board").classList.remove("card-selected");
+  cardSelected = false;
+  document.querySelector(".game-board").classList.remove("game-over");
+  document.querySelector(".game-board").classList.add("before-game");
+  document.querySelector(".winner-section").style.display = "none";
+  document.querySelector(".next-turn").removeAttribute("disabled");
+  for(let i=0; i<allCardElements.length; i++) {
+    allCardElements[i].style.display = "none";
+  }
+  updateScores();
 }
 
 // We've also used a cool life bar that displays the life left. Write a function that updates the displayed life bar and life totals

@@ -48,4 +48,64 @@ var scenarios = [
       }
     ]
   },
+  {
+    hackerCard : {
+      description : "I sent an unknonwn link with a catchy news",
+      power: 4,
+    },
+    playerCards : [
+      {
+        description : "I always open random links",
+        power:2,
+      },
+      {
+        description: "I never open unknown links",
+        power: 5,
+      },
+      {
+        description : "I would love to see what the news is",
+        power: 3
+      }
+    ]
+  },
+  {
+    hackerCard : {
+      description : "I made a website for you to download free games",
+      power: 3,
+    },
+    playerCards : [
+      {
+        description : "I only purchase legitimate games",
+        power:5,
+      },
+      {
+        description: "woo hoo! Free game!",
+        power: 1,
+      },
+      {
+        description : "will check my usual piracy website if it has the game for free",
+        power: 3
+      }
+    ]
+  },
+  {
+    hackerCard : {
+      description : "i have sent u a mail which will destroy your computer if u dont pay the price",
+      power: 4,
+    },
+    playerCards : [
+      {
+        description : "I will not pay the price let it be ",
+        power:5,
+      },
+      {
+        description: "okay I'm ready to pay",
+        power: 3,
+      },
+      {
+        description : "I'm ready to destroy u too",
+        power: 5
+      }
+    ]
+  }
 ];

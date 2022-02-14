@@ -8,44 +8,84 @@
 
 var scenarios = [
   { // add the text you'd want should appear on the hacker's card
-    hackerCard : {
-      description : "I set up a fake Wi-Fi station to steal people’s email and track them online.",
-      power : 4,
+    hackerCard: {
+      description: "I set up a fake Wi-Fi station to steal people’s email and track them online.",
+      power: 4,
     },
     // add 3 card descriptions you'd want should appear on the player's card. Keeping in mind that at least ONE of them should be an apt counter!
-    playerCards : [
+    playerCards: [
       {
-        description : "I never use public wifi networks.",
-        power : 5,
+        description: "I never use public wifi networks.",
+        power: 5,
       },
       {
-        description : "I browse the web, but I never do any personal business on a public wifi network.",
-        power : 3,
+        description: "I browse the web, but I never do any personal business on a public wifi network.",
+        power: 3,
       },
       {
-        description : "I connect to any wifi network I can use in public.",
-        power : 1,
+        description: "I connect to any wifi network I can use in public.",
+        power: 1,
       }
     ]
   },
   {
-    hackerCard : {
-      description : "I sent a fake email from your bank asking for your account details.",
-      power : 3,
+    hackerCard: {
+      description: "I sent a fake email from your bank asking for your account details.",
+      power: 3,
     },
-    playerCards : [
+    playerCards: [
       {
-        description : "I checked the email address - the message didn’t come from my bank.",
-        power : 5,
+        description: "I checked the email address - the message didn’t come from my bank.",
+        power: 5,
       },
       {
-        description : "I never give out personal information in response to an email.",
-        power : 4,
+        description: "I never give out personal information in response to an email.",
+        power: 4,
       },
       {
-        description : "I sent the details you asked for so you could check on my account.",
-        power : 1,
+        description: "I sent the details you asked for so you could check on my account.",
+        power: 1,
       }
     ]
   },
+  {
+    hackerCard: {
+      description: "Question 3",
+      power: 5,
+    },
+    playerCards: [
+      {
+        description: "Option 3.1",
+        power: 5,
+      },
+      {
+        description: "Option 3.2",
+        power: 3,
+      },
+      {
+        description: "Option 3.3",
+        power: 2,
+      }
+    ]
+  },
+  {
+    hackerCard: {
+      description: "Question 4",
+      power: 2,
+    },
+    playerCards: [
+      {
+        description: "Option 4.1",
+        power: 5,
+      },
+      {
+        description: "Option 4.2",
+        power: 2,
+      },
+      {
+        description: "Option 4.3",
+        power: 1,
+      }
+    ]
+  }
 ];

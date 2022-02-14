@@ -46,17 +46,17 @@
         <div class="name">You</div>
       </div>
 
-      <div class="card player-card player-color">
+      <div class="card player-card player-color" onclick="cardClicked(document.getElementsByClassName('card')[1])">
         <div class="text"></div>
         <div class="power"></div>
       </div>
 
-      <div class="card player-card player-color">
+      <div class="card player-card player-color" onclick="cardClicked(document.getElementsByClassName('card')[2])">
         <div class="text"></div>
         <div class="power"></div>
       </div>
 
-      <div class="card player-card player-color">
+      <div class="card player-card player-color" onclick="cardClicked(document.getElementsByClassName('card')[3])">
         <div class="text"></div>
         <div class="power"></div>
       </div>
@@ -68,7 +68,7 @@
 
   <div class="winner-section">
     <div>
-      <span class="winner-message">You got hacked!</span>
+      <span class="winner-message">Winner Message</span>
       <button class="restart" onclick="location.reload()">Play Again!</button>
     </div>
   </div>

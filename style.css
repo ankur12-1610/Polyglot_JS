@@ -7,10 +7,9 @@
   text-align: center;
 }
 
-body{
+body {
   background-repeat: repeat;
   color: white;
-
 }
 
 .game-board {
@@ -23,16 +22,16 @@ body{
 .hacker-area h1 {
   padding: 12px 10px 0 10px;
   margin: 0;
-  font-size: 16px;
+  font-size: 40px;
   font-weight: 400;
-  color: rgba(255,255,255,.6);
+  color: rgba(245, 9, 9, 0.6);
   font-style: italic;
   position: absolute;
   top: 0;
 }
 
 h1 strong {
-  color: white;
+  color: rgb(10, 9, 9);
   font-style: normal;
 }
 
@@ -52,13 +51,13 @@ h1 strong {
 .hacker-area {
   background-position: bottom;
   align-items: flex-end;
-  background-color: #e65b74;
+  background-color: #ffff00;
 }
 
 .player-area {
   background-position: top;
   align-items: top;
-  background-color: #2563eb;
+  background-color: #22eb08;
 }
 
 .player-area .card {
@@ -66,7 +65,7 @@ h1 strong {
 }
 
 .life-bar {
-  background: rgba(255,255,255,.15);
+  background: rgba(255, 255, 255, .15);
   width: 10px;
   height: 90px;
   position: relative;
@@ -95,14 +94,14 @@ h1 strong {
   min-width: 90px;
   padding: 0 5px 0 5px;
   border-radius: 4px;
-  background: rgba(0,0,0,.3);
+  background: rgba(0, 0, 0, .3);
 }
 
 .stats .thumbnail {
   font-size: 40px;
   line-height: 40px;
   margin: 0 0 5px 0;
-  text-shadow: 5px 5px 0px rgba(0,0,0,.2);
+  text-shadow: 5px 5px 0px rgba(0, 0, 0, .2);
 }
 
 .stats .thumbnail.ouch {
@@ -123,16 +122,16 @@ h1 strong {
 
 @keyframes ouch {
   0% {
-    transform: translateX(0);
+      transform: translateX(0);
   }
   25% {
-    transform: translateX(-10px);
+      transform: translateX(-10px);
   }
   75% {
-    transform: translateX(10px);
+      transform: translateX(10px);
   }
   100% {
-    transform: translateX(0);
+      transform: translateX(0);
   }
 }
 
@@ -197,13 +196,13 @@ button:active {
 
 @keyframes winnerAppear {
   0% {
-    transform: translateY(150px);
+      transform: translateY(150px);
   }
   60% {
-    transform: translateY(-10px);
+      transform: translateY(-10px);
   }
   100% {
-    transform: translateY(0);
+      transform: translateY(0);
   }
 }
 
@@ -225,7 +224,7 @@ button {
 
 @keyframes buttonPulse {
   50% {
-    transform: scale(1.02);
+      transform: scale(1.02);
   }
 }
 
@@ -249,7 +248,7 @@ button[disabled=true] {
   box-sizing: border-box;
   text-align: left;
   transition: all .15s ease-out;
-  box-shadow: 0px 5px 5px rgba(0,0,0,.3);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, .3);
   overflow: hidden;
 }
 
@@ -273,29 +272,29 @@ button[disabled=true] {
 
 @keyframes sheen {
   0% {
-    top: -10%;
-    height: 0%;
-    opacity: 0;
+      top: -10%;
+      height: 0%;
+      opacity: 0;
   }
   25% {
-    top: -10%;
-    height: 20%;
-    opacity: .2;
+      top: -10%;
+      height: 20%;
+      opacity: .2;
   }
   50% {
-    top: 20%;
-    height: 50%;
-    opacity: .3;
+      top: 20%;
+      height: 50%;
+      opacity: .3;
   }
   75% {
-    top: 110%;
-    height: 20%;
-    opacity: .2;
+      top: 110%;
+      height: 20%;
+      opacity: .2;
   }
   100% {
-    top: 110%;
-    height: 0%;
-    opacity: 0;
+      top: 110%;
+      height: 0%;
+      opacity: 0;
   }
 }
 
@@ -312,22 +311,40 @@ button[disabled=true] {
   animation: hackerShowCard .5s ease-out;
 }
 
+
 /* When the hacker card appears */
+
 @keyframes hackerShowCard {
-  0%   { transform: translateY(-25px); opacity: .5; }
-  60%  { transform: translateY(5px); }
-  100% { transform: translateY(0px); }
+  0% {
+      transform: translateY(-25px);
+      opacity: .5;
+  }
+  60% {
+      transform: translateY(5px);
+  }
+  100% {
+      transform: translateY(0px);
+  }
 }
 
 .player-card.showCard {
   animation: playerShowCard .5s ease-out;
 }
 
+
 /* When the player card appears */
+
 @keyframes playerShowCard {
-  0%   { transform: translateY(25px); opacity: .5; }
-  60%  { transform: translateY(-5px); }
-  100% { transform: translateY(0px); }
+  0% {
+      transform: translateY(25px);
+      opacity: .5;
+  }
+  60% {
+      transform: translateY(-5px);
+  }
+  100% {
+      transform: translateY(0px);
+  }
 }
 
 .card.tie-card {
@@ -346,20 +363,19 @@ button[disabled=true] {
   transform: scale(.90) translateY(-25px) rotate(3deg);
 }
 
-
 .game-board:not(.card-selected) .player-area .card:not(.played-card):hover {
   transform: translateY(-10px);
-  box-shadow: 0px 15px 15px rgba(0,0,0,.3);
+  box-shadow: 0px 15px 15px rgba(0, 0, 0, .3);
 }
 
 .player-card.played-card {
   transform: translateY(-40px);
-  box-shadow: 0px 15px 15px rgba(0,0,0,.3);
+  box-shadow: 0px 15px 15px rgba(0, 0, 0, .3);
 }
 
 .player-card.worse-card {
   transform: translateY(10px) rotate(3deg) !important;
-  box-shadow: 0px 5px 5px rgba(0,0,0,.3);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, .3);
 }
 
 .player-card.better-card {
@@ -375,7 +391,7 @@ button[disabled=true] {
   position: absolute;
   bottom: 18px;
   right: 20px;
-  color: rgba(0,0,0,.3);
+  color: rgba(0, 0, 0, .3);
   display: block;
 }
 
@@ -397,7 +413,7 @@ button[disabled=true] {
   height: 30px;
   text-align: center;
   border-radius: 50%;
-  color: rgba(0,0,0,0);
+  color: rgba(0, 0, 0, 0);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -409,23 +425,22 @@ button[disabled=true] {
   background: none;
 }
 
-
 @keyframes showPower {
   0% {
-    background: none;
-    transform: scaleX(1);
-    color: rgba(0,0,0,0);
+      background: none;
+      transform: scaleX(1);
+      color: rgba(0, 0, 0, 0);
   }
   49% {
-    color: rgba(0,0,0,0);
-    transform: scaleX(0);
+      color: rgba(0, 0, 0, 0);
+      transform: scaleX(0);
   }
   51% {
-    background: none;
-    color: black;
-    transform: scaleX(0);
+      background: none;
+      color: black;
+      transform: scaleX(0);
   }
   100% {
-    transform: scaleX(1);
+      transform: scaleX(1);
   }
 }

@@ -48,4 +48,24 @@ var scenarios = [
       }
     ]
   },
+  {
+    hackerCard : {
+      description : "I have sent you a survey-form asking your personal details.",
+      power : 2,
+    },
+    playerCards : [
+      {
+        description : "I ignored the survey-form.",
+        power : 5,
+      },
+      {
+        description : "I never give out personal information in response to a survey-form.",
+        power : 4,
+      },
+      {
+        description : "I filled the form but i never filled the password.",
+        power : 1,
+      }
+    ]
+  },
 ];

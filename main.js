@@ -10,19 +10,20 @@
 
 
 // Life of the player and the hacker.
+alert('Hackers card game');
 var playerLife = 5;
 var hackerLife = 5;
 
 // Message to be displayed when the game is over
-var hackerWinnerMessage = "Write the message here";
-var playerWinnerMessage = "Write the message here";
+var hackerWinnerMessage = "Hacks over the game";
+var playerWinnerMessage = "You won the games";
 
           // ---------------Game code starts here ---------------//
 
 // declare a few handy variables like we've done :p
 
-var playerStartLife = parseInt(playerLife);
-var hackerStartLife = parseInt(hackerLife);
+var playerStartLife = parseInt(5);
+var hackerStartLife = parseInt(5);
 
 // we will declare the functions for you and you will complete those 
 updateScores();
@@ -63,6 +64,7 @@ function cardClicked(cardEl) {
 // Now write a function that shows the power level on the player card
 function revealPlayerPower(){
   
+  
 }
 
 // Write a function that shows the power level on the hacker card
@@ -83,8 +85,18 @@ function gameOver(winner) {
 
 
 // Write a function that starts the game
+startButton.addEventListener('click',startGame);
+const gameboard=document.getElementById('game-board');
 function startGame() {
-
+    
+  console.log('game intialised');
+  startButton.classList.add('hide');
+  gameboard.classList.remove('hide');
+    
+    
+     alert('click on startgame to play');
+     
+   
 }
 
 

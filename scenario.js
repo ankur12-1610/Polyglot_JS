@@ -26,7 +26,7 @@ var scenarios = [
         description : "I connect to any wifi network I can use in public.",
         power : 1,
       }
-    ]
+    ] 
   },
   {
     hackerCard : {
@@ -48,4 +48,44 @@ var scenarios = [
       }
     ]
   },
-];
+  {
+    hackerCard : {
+      description :"I used to hack all of your information whenever you visit unknown websites ",
+      power : 4,
+    },
+    playerCards : [
+      {
+        description : "I will never visit unknown websites",
+        power : 5,
+      },
+      {
+        description : "Sometimes I used to vist unknown websites",
+        power : 3,
+      },
+      {
+        description : "I always visit unknown websites",
+        power : 1,
+      },
+    ] 
+  },
+  {
+  hackerCard : {
+      description:"I always use some applications to pass bugs into your device. ",
+      power : 3,
+  },
+  playerCards:[
+    {
+      description:"I will never install unknown applications in my device.",
+      power :5,
+    },
+    {
+      description: "I will never check where the source of the application.",
+      power :1,
+    },
+    {
+      description :"Sometimes theu used to install in my device with other applications",
+      power : 2,
+    },
+  ]
+},
+]

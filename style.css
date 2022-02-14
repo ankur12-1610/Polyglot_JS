@@ -137,7 +137,7 @@ h1 strong {
 }
 
 .game-over button {
-  display: none;
+  display:block;
 }
 
 button.next-turn {

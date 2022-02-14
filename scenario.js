@@ -31,7 +31,7 @@ var scenarios = [
   {
     hackerCard : {
       description : "I sent a fake email from your bank asking for your account details.",
-      power : 3,
+      power : 2,
     },
     playerCards : [
       {
@@ -48,4 +48,25 @@ var scenarios = [
       }
     ]
   },
+  {
+    hackerCard : {
+      description : "I sent a fake email to you for claiming your prize money.",
+      power: 2,
+    },
+  playerCards : [
+    {
+      description : "I opened it to claim the prize.",
+      power:1
+    },
+    {
+      description: "I saw the mail but didn't click on the link.",
+      power: 4,
+    },
+    {
+      description :" I am well aware of these frauds. So I never entertain such emails.",
+      power:5
+    },
+
+  ]
+  }
 ];

@@ -52,13 +52,13 @@ h1 strong {
 .hacker-area {
   background-position: bottom;
   align-items: flex-end;
-  background-color: #e65b74;
+  background-color: #E6914C;
 }
 
 .player-area {
   background-position: top;
   align-items: top;
-  background-color: #2563eb;
+  background-color: #4BCEE6;
 }
 
 .player-area .card {
@@ -120,7 +120,7 @@ h1 strong {
   font-weight: 700;
   margin: 8px 0;
 }
-
+                          
 @keyframes ouch {
   0% {
     transform: translateX(0);
@@ -149,7 +149,7 @@ button.next-turn {
 }
 
 .during-game .next-turn {
-  display: block;
+  display: inline;
 }
 
 button.start-game {
@@ -160,7 +160,7 @@ button.start-game {
 }
 
 .before-game .start-game {
-  display: block;
+  display: inline;
 }
 
 button:hover {

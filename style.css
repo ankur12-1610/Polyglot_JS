@@ -155,7 +155,7 @@ button.next-turn {
 button.start-game {
   position: absolute;
   background: black;
-  display: none;
+  display:none;
   top: -20px;
 }
 
@@ -175,12 +175,16 @@ button:active {
   display: none;
   position: fixed;
   padding: 15px 0;
-  left: 0;
+  left: 43%;
   right: 0;
-  bottom: 0;
+  bottom: 2%;
   align-items: center;
   justify-content: center;
   animation: winnerAppear .4s ease-out;
+}
+
+.winner-section.winnerDeclared {
+  display: block;
 }
 
 .winner-section button {
@@ -236,6 +240,7 @@ button[disabled=true] {
 }
 
 .card {
+  /* visibility: hidden; */
   opacity: 0;
   margin: 0 10px;
   width: 150px;
@@ -260,7 +265,7 @@ button[disabled=true] {
   left: -20%;
   width: 140%;
   height: 0%;
-  background: white;
+  background: rgb(255, 255, 255);
   animation: sheen infinite .5s ease-in-out;
   display: none;
   transform: rotate(-7deg);
@@ -401,6 +406,7 @@ button[disabled=true] {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  /* visibility: visible; */
 }
 
 .card.reveal-power .power {

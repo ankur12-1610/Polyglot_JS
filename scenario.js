@@ -48,4 +48,46 @@ var scenarios = [
       }
     ]
   },
+  { // add the text you'd want should appear on the hacker's card
+    hackerCard : {
+      description : "I set up a fake Wi-Fi station to steal people’s email and track them online.",
+      power : 4,
+    },
+    // add 3 card descriptions you'd want should appear on the player's card. Keeping in mind that at least ONE of them should be an apt counter!
+    playerCards : [
+      {
+        description : "I never use public wifi networks.",
+        power : 5,
+      },
+      {
+        description : "I browse the web, but I never do any personal business on a public wifi network.",
+        power : 3,
+      },
+      {
+        description : "I connect to any wifi network I can use in public.",
+        power : 1,
+      }
+    ]
+  },
+  { 
+    hackerCard : {
+      description : "I asked for your credit card's CVV to 'renew it'.",
+      power : 3,
+    },
+    // add 3 card descriptions you'd want should appear on the player's card. Keeping in mind that at least ONE of them should be an apt counter!
+    playerCards : [
+      {
+        description : "Banks never ask for CVV.",
+        power : 4,
+      },
+      {
+        description : "I reported your number to the bank's online fraud division.",
+        power : 5,
+      },
+      {
+        description : "I gave you all the deatils.",
+        power : 1,
+      }
+    ]
+  }
 ];

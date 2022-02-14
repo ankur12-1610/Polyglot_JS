@@ -14,13 +14,14 @@ var playerLife = 5;
 var hackerLife = 5;
 
 // Message to be displayed when the game is over
-var hackerWinnerMessage = "Write the message here";
-var playerWinnerMessage = "Write the message here";
+var hackerWinnerMessage = "Oh no! The hacker won!";
+var playerWinnerMessage = "You Won!! Congratulations!!";
 
           // ---------------Game code starts here ---------------//
 
 // declare a few handy variables like we've done :p
-
+var hacker
+var player
 var playerStartLife = parseInt(playerLife);
 var hackerStartLife = parseInt(hackerLife);
 
@@ -33,7 +34,7 @@ document.querySelector(".game-board").classList.add("before-game");
 var allCardElements = document.querySelectorAll(".card");
 
 // Adds click handler to all player card elements so that your cards are actionable
-
+var playercardclick1
 
 // An example of a function that controls what would happen when a card is clicked
 
@@ -78,13 +79,15 @@ function compareCards(){
 
 //Use conditional statements and complete the function that shows the winner message
 function gameOver(winner) {
-  
+  //if winner === hacker:
 }
 
 
 // Write a function that starts the game
 function startGame() {
-
+  document.querySelector(".game-board").classList.remove(".before-game");
+  document.querySelector(".game-board").classList.add("during-game");
+  playTurn()
 }
 
 
@@ -99,6 +102,7 @@ function updateScores(){
 
   // Here these update life totals for each player
   document.querySelector(".player-stats .life-total").innerHTML = playerLife;
+  document.querySelector(".hacker-stats .life-total").innerHTML = hackerLife;
 
   // We've added the code to update the player lifebar
   var playerPercent = playerLife / playerStartLife * 100;
@@ -106,19 +110,55 @@ function updateScores(){
     playerPercent = 0;
   }
   document.querySelector(".player-stats .life-left").style.height =  playerPercent + "%";
-
-  // Now you write the code to update the hacker lifebar
-
+    // Now you write the code to update the hacker lifebar
+    var hackerPercent = hackerLife / hackerStartLife * 100;
+    if (hackerPercent < 0) {
+      hackerPercent = 0;
+    }
+    document.querySelector(".hacker-stats .life-left").style.height = hackerPercent + "%"
 }
 
 
 
 // Write a function that Plays one turn of the game
 function playTurn() {
-
+  document.querySelector(".game-board").classList.remove("card-selected");
+  cardSelected = false;
+  document.querySelector(".next-turn").setAttribute("disabled", true);
+  let hackerIcon = document.querySelector(".hacker-stats .thumbnail");
+  let playerIcon = document.querySelector(".player-stats .thumbnail");
+  hackerIcon.classList.remove("ouch");
+  playerIcon.classList.remove("ouch");
+  for(let i=0; i<allCardElements.length; i++) {
+    allCardElements[i].classList.remove("reveal-power");
+    allCardElements[i].classList.remove("showCard");
+    allCardElements[i].classList.remove("worse-card");
+    allCardElements[i].classList.remove("better-card");
+    allCardElements[i].classList.remove("tie-card");
+    allCardElements[i].classList.remove("played-card");
+}
+  let index = Math.floor(Math.random() * scenarios.length);
+  let hackerCard = document.querySelector(".hacker-card");
+  hackerCard.querySelector(".text").textContent = scenarios[index].hackerCard.description;
+  hackerCard.querySelector(".power").textContent = scenarios[index].hackerCard.power;
+  hackerCard.classList.add("prepared");
+  for(let i=0; i<allCardElements.length; i++) {
+    if(allCardElements[i].classList.contains("player-card")){
+      allCardElements[i].querySelector(".text").textContent = scenarios[index].playerCards[i-1].description;
+      allCardElements[i].querySelector(".power").textContent = scenarios[index].playerCards[i-1].power;
+      allCardElements[i].classList.add("prepared");
+    }
+  }
+  let hackerIcon = document.querySelector(".hacker-stats .thumbnail");
+  let playerIcon = document.querySelector(".player-stats .thumbnail");
+  hackerIcon.classList.remove("ouch");
+  playerIcon.classList.remove("ouch");
+  revealCards();
 }
 
 // Finally write the function that reveals the cards. Use 
 function revealCards(){
-
+  for(let i=0; i<allCardElements.length; i++) {
+    allCardElements[i].classList.add("showCard");
+  }
 }

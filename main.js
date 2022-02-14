@@ -143,15 +143,11 @@ function gameOver(winner) {
     document.querySelector(".winner-section").classList.add("hacker-color");
     document.querySelector("button.next-turn").setAttribute("disabled");
   } else if (winner == "Player") {
-    document.querySelector(".winner-message").innerHTML =
-      playerWinnerMessage + "Congrats:" + playerName;
+    document.querySelector(".winner-message").innerHTML =playerWinnerMessage;
     document.querySelector(".winner-section").classList.add("player-color");
     document.querySelector("button.next-turn").setAttribute("disabled");
-  } else {
-    document.querySelector(".winner-message").innerHTML = noWinnerMessage;
-    document.querySelector(".winner-section").classList.add("hacker-color");
-    document.querySelector("button.next-turn").setAttribute("disabled");
-  }
+  } 
+  
 }
 
 // Write a function that starts the game

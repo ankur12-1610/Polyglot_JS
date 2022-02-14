@@ -48,4 +48,24 @@ var scenarios = [
       }
     ]
   },
+  {
+    hackerCard : {
+      description : "I sent you a free Discord Nitro Link.",
+      power : 4,
+    },
+    playerCards : [
+      {
+        description : "I dont click unknown links. I am aware of phishing attacks.",
+        power : 5,
+      },
+      {
+        description : "I will ask mom if i should click the link.",
+        power : 2,
+      },
+      {
+        description : "Wow, you are a generous hecker. Thank you ^w^",
+        power : 1,
+      }
+    ]
+  },
 ];

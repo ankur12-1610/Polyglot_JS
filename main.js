@@ -8,6 +8,8 @@
 
 // Your main work would be here, in main.js and would advice you to also pay a visit to the scenario.js
 
+//       Im unable to complete because im new to Javascript
+
 
 // Life of the player and the hacker.
 var playerLife = 5;

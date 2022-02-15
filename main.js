@@ -181,10 +181,10 @@ function playTurn() {
   // console.log(window.getComputedStyle(btn).transform); 
   var cards = document.getElementsByClassName('card');
   for(var i=0; i<cards.length; i++){
-    // cards[i].style.opacity = 0;
+    cards[i].style.opacity = 0;
     cards[i].querySelector(".power").style.color = "white";
-    window.getComputedStyle(cards[i]).opacity = 0;
-    // cards[i].style.transform = 'translateY(0px)';
+    //window.getComputedStyle(cards[i]).opacity = 0;
+    cards[i].style.transform = 'translateY(0px)';
     // console.log(cards[i]);
   }
   // console.log("next round is loaded")

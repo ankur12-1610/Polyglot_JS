@@ -78,7 +78,7 @@ h1 strong {
   bottom: 0;
   background: white;
   width: 100%;
-  height: 50%;
+  height: 100%;
   transition: height .25s ease-out;
 }
 
@@ -148,7 +148,7 @@ button.next-turn {
   display: none;
 }
 
-.during-game .next-turn {
+.next-turn {
   display: block;
 }
 
@@ -160,7 +160,7 @@ button.start-game {
 }
 
 .before-game .start-game {
-  display: block;
+  display:block;
 }
 
 button:hover {

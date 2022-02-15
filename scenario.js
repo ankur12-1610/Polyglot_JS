@@ -77,11 +77,11 @@ var scenarios = [
   },
   playerCards : [
     {
-      description : "I opened it but didn't download as I don.t use that app.",
+      description : "I opened it but didn't download as I don't use that app.",
       power : 2,
     },
     {
-      description : "I am aware of phishing. So I dont click on such links.",
+      description : "I am aware of phishing. So I don't click on such links.",
       power:5,
     },
     {

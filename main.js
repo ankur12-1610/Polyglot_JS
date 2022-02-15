@@ -14,8 +14,21 @@ var playerLife = 5;
 var hackerLife = 5;
 
 // Message to be displayed when the game is over
-var hackerWinnerMessage = "You got hacked!";
-var playerWinnerMessage = "Great job ! You won";
+var username ="";
+username=prompt("Enter a username (maximum 10 characters)");
+while(username == "" || username.length>10)
+  {
+    alert("Please enter a valid username");
+    username=prompt("Enter a username (maximum 10 characters)");
+  }
+  var username2=username[0].toUpperCase()+username.substring(1).toLowerCase();
+document.getElementById("username").innerHTML=username2;
+
+var hackerWinnerMessage = `Sorry ${username2} , You got hacked !`;
+var playerWinnerMessage = `Great job ${username2} , You won !`;
+
+
+
 
 
 

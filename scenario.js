@@ -48,4 +48,128 @@ var scenarios = [
       }
     ]
   },
+  {
+    hackerCard : {
+      description : "I watched you type your password and hacked your account",
+      power : 2,
+    },
+    playerCards : [
+      {
+        description : "I deleted the account and started a new one",
+        power : 1,
+      },
+      {
+        description : "I changed my password on all of the accounts because they are all the same.",
+        power : 4,
+      },
+      {
+        description : "I use different password for all of my different accounts.",
+        power : 5,
+      }
+    ]
+  },
+  {
+    hackerCard : {
+      description : "I hacked Your system and all your data is deleted now.",
+      power : 2,
+    },
+    playerCards : [
+      {
+        description : "I have my data backed up in local and external hard drive",
+        power : 3,
+      },
+      {
+        description : "I never backed up my data in any way.",
+        power : 1,
+      },
+      {
+        description : "I follow the 3-2-1 backup rule",
+        power : 5,
+      }
+    ]
+  },
+  { // add the text you'd want should appear on the hacker's card
+    hackerCard : {
+      description : "I set up a fake Wi-Fi station to steal people’s email and track them online.",
+      power : 4,
+    },
+    // add 3 card descriptions you'd want should appear on the player's card. Keeping in mind that at least ONE of them should be an apt counter!
+    playerCards : [
+      {
+        description : "I never use public wifi networks.",
+        power : 5,
+      },
+      {
+        description : "I browse the web, but I never do any personal business on a public wifi network.",
+        power : 3,
+      },
+      {
+        description : "I connect to any wifi network I can use in public.",
+        power : 1,
+      }
+    ]
+  },
+  { // add the text you'd want should appear on the hacker's card
+    hackerCard : {
+      description : "I set up a fake Wi-Fi station to steal people’s email and track them online.",
+      power : 4,
+    },
+    // add 3 card descriptions you'd want should appear on the player's card. Keeping in mind that at least ONE of them should be an apt counter!
+    playerCards : [
+      {
+        description : "I never use public wifi networks.",
+        power : 5,
+      },
+      {
+        description : "I browse the web, but I never do any personal business on a public wifi network.",
+        power : 3,
+      },
+      {
+        description : "I connect to any wifi network I can use in public.",
+        power : 1,
+      }
+    ]
+  },
+  { // add the text you'd want should appear on the hacker's card
+    hackerCard : {
+      description : "I set up a fake Wi-Fi station to steal people’s email and track them online.",
+      power : 4,
+    },
+    // add 3 card descriptions you'd want should appear on the player's card. Keeping in mind that at least ONE of them should be an apt counter!
+    playerCards : [
+      {
+        description : "I never use public wifi networks.",
+        power : 5,
+      },
+      {
+        description : "I browse the web, but I never do any personal business on a public wifi network.",
+        power : 3,
+      },
+      {
+        description : "I connect to any wifi network I can use in public.",
+        power : 1,
+      }
+    ]
+  },
+  { // add the text you'd want should appear on the hacker's card
+    hackerCard : {
+      description : "I set up a fake Wi-Fi station to steal people’s email and track them online.",
+      power : 4,
+    },
+    // add 3 card descriptions you'd want should appear on the player's card. Keeping in mind that at least ONE of them should be an apt counter!
+    playerCards : [
+      {
+        description : "I never use public wifi networks.",
+        power : 5,
+      },
+      {
+        description : "I browse the web, but I never do any personal business on a public wifi network.",
+        power : 3,
+      },
+      {
+        description : "I connect to any wifi network I can use in public.",
+        power : 1,
+      }
+    ]
+  },
 ];

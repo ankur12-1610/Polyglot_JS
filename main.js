@@ -117,14 +117,13 @@ function compareCards() {
   }
   updateScores();
 
-  if (0 >= playerLife) {
+  if (0 >= playerLife && 0<=hackerLife) {
     gameOver("Hacker");
-  } else if (0 >= hackerLife) {
+  } else if (0 >= hackerLife && 0<=playerLife) {
     gameOver("Player");
-  } else if (play >= 3) {
-    gameOver("No-Winner");
-    play = 0;
-  }
+  } 
+  
+
 
   roundFinished = true;
 

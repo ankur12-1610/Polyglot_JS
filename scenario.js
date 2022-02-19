@@ -48,4 +48,44 @@ var scenarios = [
       }
     ]
   },
+  {
+    hackerCard : {
+      description : "Prince of Somalia is claiming to be your long lost brother and asking for your account details.",
+      power : 3,
+    },
+    playerCards : [
+      {
+        description : "LOL this is clearly a scam",
+        power : 5,
+      },
+      {
+        description : "I dont recall having rich cousins",
+        power : 4,
+      },
+      {
+        description : "MONEY MONEY MONEY BABYYY. Sending him my acc details, bitcoin wallet details everythingg",
+        power : 1,
+      }
+    ]
+  },
+  {
+    hackerCard : {
+      description : "Strangely hot woman claims to be mother of your child and is asking you to pay alimony",
+      power : 3,
+    },
+    playerCards : [
+      {
+        description : "Again, a spam. Time to move on with my day.",
+        power : 5,
+      },
+      {
+        description : "Even if I'm drunk, no one would like me, which makes this an unlikely scenario.",
+        power : 4,
+      },
+      {
+        description : "I have a history of making questionable life choices, so this might actually be true.",
+        power : 1,
+      }
+    ]
+  },
 ];
